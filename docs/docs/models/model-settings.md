@@ -5,15 +5,15 @@ sidebar_label: Settings
 
 # Model Settings
 
-Plandex gives you a number of ways to control the models used in your plans. Changes to models are [version controlled](../core-concepts/version-control.md) and can be [branched](../core-concepts/branches.md).
+Sophon gives you a number of ways to control the models used in your plans. Changes to models are [version controlled](../core-concepts/version-control.md) and can be [branched](../core-concepts/branches.md).
 
 ## `models` and `set-model`
 
 You can see the current plan's models with the `models` command and change them with the `set-model` command.
 
 ```bash
-plandex models # show the current models
-plandex set-model # select a model pack or configure model settings in JSON
+sophon models # show the current models
+sophon set-model # select a model pack or configure model settings in JSON
 ```
 
 ## Model Defaults 
@@ -21,8 +21,8 @@ plandex set-model # select a model pack or configure model settings in JSON
 `set-model` updates model settings for the current plan. If you want to change the default model settings for all new plans, use `set-model default`.
 
 ```bash
-plandex models default # show the default models for new plans
-plandex set-model default # select a default model pack for new plans or configure default model settings in JSON
+sophon models default # show the default models for new plans
+sophon set-model default # select a default model pack for new plans or configure default model settings in JSON
 ```
 
 ## Model Settings JSON
@@ -37,7 +37,7 @@ Model roles can either be a string (the model ID) or an object with model config
 
 ```json
 {
-  "$schema": "https://plandex.ai/schemas/model-pack-inline.schema.json",
+  "$schema": "https://sophon.ai/schemas/model-pack-inline.schema.json",
   "planner": "anthropic/claude-opus-4",
   "coder": "anthropic/claude-sonnet-4",
   "architect": "anthropic/claude-sonnet-4",
@@ -55,7 +55,7 @@ You can also configure individual role settings and fallbacks with an object:
 
 ```json
 {
-  "$schema": "https://plandex.ai/schemas/model-pack-inline.schema.json",
+  "$schema": "https://sophon.ai/schemas/model-pack-inline.schema.json",
   "planner": {
     "modelId": "anthropic/claude-opus-4",
     "temperature": 0.7,
@@ -102,7 +102,7 @@ You can set the top-level `localProvider` key to `ollama` to use local models vi
 
 ```json
 {
-  "$schema": "https://plandex.ai/schemas/model-pack-inline.schema.json",
+  "$schema": "https://sophon.ai/schemas/model-pack-inline.schema.json",
   "localProvider": "ollama",
   "planner": "ollama/deepseek-r1:14b",
   ...

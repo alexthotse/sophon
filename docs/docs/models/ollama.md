@@ -5,8 +5,8 @@ sidebar_label: Ollama Quickstart
 
 # Ollama Quickstart
 
-Plandex works with [Ollama](https://ollama.com/) models. To use them, you need to [self-host Plandex.](../hosting/self-hosting/local-mode-quickstart.md)
-**Ollama isn't supported with Plandex Cloud.**
+Sophon works with [Ollama](https://ollama.com/) models. To use them, you need to [self-host Sophon.](../hosting/self-hosting/local-mode-quickstart.md)
+**Ollama isn't supported with Sophon Cloud.**
 
 ## Disclaimer
 
@@ -24,7 +24,7 @@ There's also a built-in experimental `ollama` model pack that uses local models 
 
 To use Ollama models, you need enough system resources to run the models you want to use. To use the built-in experimental `ollama` model pack (with qwen3:32b as the largest model), at least 32GB of RAM is recommended as an absolute minimum—48GB or more is recommended for breathing room. For the `ollama-daily` and `ollama-oss` model packs (with devstral:24b as the largest model), at least 16GB of RAM is recommended as an absolute minimum—24GB or more is recommended for breathing room.
 
-If you use [custom models and a custom model pack](./custom-models.md), you'll have full flexibility to choose the appropriate models for your system. Just remember that running Plandex prompts successfully is a challenge for even the largest local models.
+If you use [custom models and a custom model pack](./custom-models.md), you'll have full flexibility to choose the appropriate models for your system. Just remember that running Sophon prompts successfully is a challenge for even the largest local models.
 
 ## Install and run Ollama
 
@@ -56,15 +56,15 @@ ollama pull qwen3:8b
 ollama pull devstral:24b
 ```
 
-## Use Ollama in Plandex
+## Use Ollama in Sophon
 
 ### Built-in model packs
 
-To use one of the built-in Ollama model packs in Plandex, decide whether you want to use `ollama`, which uses local models for all roles, but may struggle in practice, `ollama-daily`, which uses local models for less demanding roles, plus the default Plandex models from the `daily-driver` model pack for heavy-lifting, or `ollama-oss`, which uses local models for less demanding roles, plus the open source Plandex models from the `oss` model pack for heavy-lifting.
+To use one of the built-in Ollama model packs in Sophon, decide whether you want to use `ollama`, which uses local models for all roles, but may struggle in practice, `ollama-daily`, which uses local models for less demanding roles, plus the default Sophon models from the `daily-driver` model pack for heavy-lifting, or `ollama-oss`, which uses local models for less demanding roles, plus the open source Sophon models from the `oss` model pack for heavy-lifting.
 
 ```bash
 \set-model ollama # REPL
-plandex set-model ollama # CLI
+sophon set-model ollama # CLI
 ```
 
 Or:
@@ -72,8 +72,8 @@ Or:
 ```bash
 \set-model ollama-daily # REPL
 \set-model ollama-oss
-plandex set-model ollama-daily # CLI
-plandex set-model ollama-oss
+sophon set-model ollama-daily # CLI
+sophon set-model ollama-oss
 ```
 
 ### Custom models and model packs
@@ -107,4 +107,4 @@ When configuring a custom model pack to use Ollama, set the top-level `localProv
 
 ## Contributors
 
-If you experiment with Plandex and Ollama and you find model combinations that work better than the built-in model packs, please chime in on [Discord](https://discord.gg/plandex-ai) or [open a PR](https://github.com/plandex-ai/plandex/pulls). The world of local models moves fast, and we can't always keep up with the cutting edge ourselves, so it would be great to have community help on filling in the gaps. With your help, we'd love to get to a place where Plandex can work effectively with 100% local models.
+If you experiment with Sophon and Ollama and you find model combinations that work better than the built-in model packs, please chime in on [Discord](https://discord.gg/sophon-ai) or [open a PR](https://github.com/sophon-ai/sophon/pulls). The world of local models moves fast, and we can't always keep up with the cutting edge ourselves, so it would be great to have community help on filling in the gaps. With your help, we'd love to get to a place where Sophon can work effectively with 100% local models.

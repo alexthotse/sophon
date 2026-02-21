@@ -3,13 +3,13 @@ index c90eeb7..e9da642 100644
 --- a/pre_build.go
 +++ b/tests/removal/post_build.go
 @@ -7,18 +7,36 @@ import (
- 	"plandex/auth"
- 	"plandex/lib"
- 	"plandex/term"
+	"sophon/auth"
+	"sophon/lib"
+	"sophon/term"
 +	"strconv"
 +	"strings"
  
- 	"plandex-shared"
+	"sophon-shared"
  	"github.com/spf13/cobra"
  )
  

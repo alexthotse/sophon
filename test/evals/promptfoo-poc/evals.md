@@ -1,6 +1,6 @@
 # Evals
 
-Evals for plandex.
+Evals for sophon.
 
 ## Overview
 

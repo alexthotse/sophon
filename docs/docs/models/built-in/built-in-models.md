@@ -5,7 +5,7 @@ sidebar_label: Models
 
 # Built-In Models
 
-Plandex includes a curated selection of built-in models.
+Sophon includes a curated selection of built-in models.
 
 ## OpenAI
 

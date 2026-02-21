@@ -5,15 +5,15 @@ sidebar_label: Environment Variables
 
 # Environment Variables
 
-This is an overview of all the environment variables that can be used with Plandex.
+This is an overview of all the environment variables that can be used with Sophon.
 
 ## CLI
 
 ### General
 
 ```bash
-PLANDEX_ENV=development # Set this to 'development' to default to the local development server instead of Plandex Cloud when working on Plandex itself.
-PLANDEX_API_HOST= # Defaults to 'http://localhost:8099' if PLANDEX_ENV is development, otherwise it's 'https://api.plandex.ai'—override this to use a different host.
+PLANDEX_ENV=development # Set this to 'development' to default to the local development server instead of Sophon Cloud when working on Sophon itself.
+PLANDEX_API_HOST= # Defaults to 'http://localhost:8099' if PLANDEX_ENV is development, otherwise it's 'https://api.sophon.ai'—override this to use a different host.
 ```
 
 ### LLM Providers
@@ -71,8 +71,8 @@ Check out the [Development Guide](./development.md) for more details.
 ```bash
 PLANDEX_OUT_DIR=/usr/local/bin # Where the development binary should be output when using dev.sh
 PLANDEX_DEV_CLI_OUT_DIR=/usr/local/bin # Where the development binary should be output when using dev.sh
-PLANDEX_DEV_CLI_NAME=plandex-dev # The name of the development binary when using dev.sh
-PLANDEX_DEV_CLI_ALIAS=pdxd # The alias for the development binary when using dev.sh
+PLANDEX_DEV_CLI_NAME=sophon-dev # The name of the development binary when using dev.sh
+PLANDEX_DEV_CLI_ALIAS=sdxd # The alias for the development binary when using dev.sh
 GOPATH= # This should be already set to your Go folder if you've installed Golang.
 ```
 
@@ -84,10 +84,10 @@ Check out the [Self-Hosting Guide](./hosting/self-hosting/local-mode-quickstart.
 
 ```bash
 GOENV=development # Whether to run in development or production mode. Must be 'development' or 'production'
-PLANDEX_BASE_DIR= # The base directory to read and write files. Defaults to '$HOME/plandex-server' in development mode, '/plandex-server' in production.
+PLANDEX_BASE_DIR= # The base directory to read and write files. Defaults to '$HOME/sophon-server' in development mode, '/sophon-server' in production.
 API_HOST= # The host the API server listens on. Defaults to 'http://localhost:$PORT'. In production mode, should be a host like 'https://api.your-domain.ai'.
 PORT=8099 # The port the server listens on. Defaults to 8099.
-DATABASE_URL= # The URL of the PostgreSQL database. Defaults to 'postgres://plandex:plandex@plandex-postgres:5432/plandex?sslmode=disable' in development mode
+DATABASE_URL= # The URL of the PostgreSQL database. Defaults to 'postgres://sophon:sophon@sophon-postgres:5432/sophon?sslmode=disable' in development mode
 LOCAL_MODE= # Whether to run in local mode
 OLLAMA_BASE_URL= # The base URL of the Ollama server—only need when the server is running in a Docker container and needs to access Ollama models running outside of the container
 ```
@@ -101,7 +101,7 @@ For self-hosting with docker-compose, default values for all necessary environme
 If you're *not* using docker-compose, you'll need a `DATABASE_URL` environment variable that points to a PostgreSQL database. For example, if you're running PostgreSQL locally, you might set it to something like this:
 
 ```bash
-DATABASE_URL=postgres://plandex:<password>@<host>:<port>/plandex?sslmode=disable
+DATABASE_URL=postgres://sophon:<password>@<host>:<port>/sophon?sslmode=disable
 ```
 
 If you're running in production mode, you'll also need to set `API_HOST` to the host the API server is running on.

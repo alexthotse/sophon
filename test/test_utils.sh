@@ -1,5 +1,5 @@
 #!/bin/bash
-# test-utils.sh - Common utilities for Plandex test scripts
+# test-utils.sh - Common utilities for Sophon test scripts
 
 export PLANDEX_ENV='development'
 
@@ -10,7 +10,7 @@ export YELLOW='\033[1;33m'
 export NC='\033[0m' # No Color
 
 # Default command
-export PLANDEX_CMD="${PLANDEX_CMD:-plandex-dev}"
+export PLANDEX_CMD="${PLANDEX_CMD:-sophon-dev}"
 
 # Logging functions
 log() {
@@ -53,15 +53,15 @@ run_cmd() {
     fi
 }
 
-# Run plandex command
-run_plandex_cmd() {
+# Run sophon command
+run_sophon_cmd() {
     local cmd="$1"
     local description="$2"
     run_cmd "$PLANDEX_CMD $cmd" "$description"
 }
 
-# Run plandex command and check if output contains substring
-check_plandex_contains() {
+# Run sophon command and check if output contains substring
+check_sophon_contains() {
     local cmd="$1"
     local expected="$2"
     local description="$3"
@@ -100,8 +100,8 @@ expect_failure() {
     fi
 }
 
-# Expect plandex command to fail
-expect_plandex_failure() {
+# Expect sophon command to fail
+expect_sophon_failure() {
     local cmd="$1"
     local description="$2"
     expect_failure "$PLANDEX_CMD $cmd" "$description"
@@ -121,7 +121,7 @@ setup_test_dir() {
     source ../.env.client-keys
 
     local test_name="$1"
-    TEST_DIR="/tmp/plandex-${test_name}-$$"
+    TEST_DIR="/tmp/sophon-${test_name}-$$"
     TIMESTAMP=$(date +%Y%m%d_%H%M%S)
     
     info "Setting up test environment in $TEST_DIR"

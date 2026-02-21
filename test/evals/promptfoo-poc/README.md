@@ -1,6 +1,6 @@
 # Test Driven Development of Prompts
 
-This directory is dedicated to the systematic development of prompts for the plandex project. The prompts are developed in a test-driven manner, where the prompt is first written in a markdown file, and then the prompt is tested by running the prompt through the various evaluations. The output of the prompt is then graded and A/B tested for various metrics (see [metrics](#metrics)). The prompt is then iteratively improved until it meets the desired metrics.
+This directory is dedicated to the systematic development of prompts for the sophon project. The prompts are developed in a test-driven manner, where the prompt is first written in a markdown file, and then the prompt is tested by running the prompt through the various evaluations. The output of the prompt is then graded and A/B tested for various metrics (see [metrics](#metrics)). The prompt is then iteratively improved until it meets the desired metrics.
 
 We have decided to write the majority of the evals using the [promptfoo]() framework, as it is robust and contains customizations with a clear ease of setup.
 

@@ -5,11 +5,11 @@ sidebar_label: Claude Pro/Max
 
 # Claude Pro/Max Subscription
 
-If you have a Claude Pro or Max subscription, Plandex can use it when calling Anthropic models. You can use it in either Integrated Models Mode on Plandex Cloud, or in BYO Key Mode (whether on Cloud or self-hosting).
+If you have a Claude Pro or Max subscription, Sophon can use it when calling Anthropic models. You can use it in either Integrated Models Mode on Sophon Cloud, or in BYO Key Mode (whether on Cloud or self-hosting).
 
 ## Startup Prompt
 
-Assuming you're using Anthropic models (which the default model pack does), you'll be asked if you want to connect your Claude subscription the first time you run Plandex. Follow the instructions to connect.
+Assuming you're using Anthropic models (which the default model pack does), you'll be asked if you want to connect your Claude subscription the first time you run Sophon. Follow the instructions to connect.
 
 ## CLI Commands
 
@@ -18,7 +18,7 @@ Assuming you're using Anthropic models (which the default model pack does), you'
 You can connect your subscription with the `connect-claude` command.
 
 ```bash
-plandex connect-claude # CLI
+sophon connect-claude # CLI
 \connect-claude  # REPL
 ```
 
@@ -27,7 +27,7 @@ plandex connect-claude # CLI
 You can disconnect your subscription and clear credentials from your device with the `disconnect-claude` command.
 
 ```bash
-plandex disconnect-claude # CLI
+sophon disconnect-claude # CLI
 \disconnect-claude  # REPL
 ```
 
@@ -36,7 +36,7 @@ plandex disconnect-claude # CLI
 You can check whether a subscription is connected with `claude-status`
 
 ```bash
-plandex claude-status # CLI
+sophon claude-status # CLI
 \claude-status  # REPL
 ```
 
@@ -44,10 +44,10 @@ This command will also tell you if the subscription's quota has been exceeded an
 
 ## Quota Exhaustion
 
-If you're using Plandex Cloud with Integrated Models Mode, Anthropic model calls will use your Claude subscription until it runs out of quota, then switch to using Plandex credits until the quota resets.
+If you're using Sophon Cloud with Integrated Models Mode, Anthropic model calls will use your Claude subscription until it runs out of quota, then switch to using Sophon credits until the quota resets.
 
-If you're self-hosting or using Plandex Cloud in BYO API Key Mode, Anthropic model calls will use your Claude subscription until it runs out of quota, then:
+If you're self-hosting or using Sophon Cloud in BYO API Key Mode, Anthropic model calls will use your Claude subscription until it runs out of quota, then:
 
-- If you have an API key or credentials set for an [Anthropic provider](./model-providers.md) (like the Anthropic API, Google Vertex AI, AWS Bedrock, or OpenRouter), Plandex will switch to the backup provider until the quota resets.
+- If you have an API key or credentials set for an [Anthropic provider](./model-providers.md) (like the Anthropic API, Google Vertex AI, AWS Bedrock, or OpenRouter), Sophon will switch to the backup provider until the quota resets.
 
 - If you have no API key or credentials set for an Anthropic provider, you'll get a rate limit error until your quota resets.

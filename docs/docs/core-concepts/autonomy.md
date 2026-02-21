@@ -5,7 +5,7 @@ sidebar_label: Autonomy Levels
 
 # Autonomy
 
-Plandex v2 offers multiple levels of autonomy with pre-set config. Each autonomy level controls:
+Sophon v2 offers multiple levels of autonomy with pre-set config. Each autonomy level controls:
 
 - Context loading and management
 - Plan continuation through multiple steps
@@ -35,34 +35,34 @@ Plandex v2 offers multiple levels of autonomy with pre-set config. Each autonomy
 
 ```bash
 # For current plan
-plandex set-auto none    # No automation
-plandex set-auto basic   # Auto-continue only
-plandex set-auto plus    # Smart context management
-plandex set-auto semi    # Auto-load context
-plandex set-auto full    # Full automation
+sophon set-auto none    # No automation
+sophon set-auto basic   # Auto-continue only
+sophon set-auto plus    # Smart context management
+sophon set-auto semi    # Auto-load context
+sophon set-auto full    # Full automation
 
 # For default settings on new plans
-plandex set-auto default basic   # Set default to basic
+sophon set-auto default basic   # Set default to basic
 ```
 
 ### When Starting the REPL
 
 ```bash
-plandex --no-auto    # Start with 'None'
-plandex --basic      # Start with 'Basic'
-plandex --plus       # Start with 'Plus'
-plandex --semi       # Start with 'Semi'
-plandex --full       # Start with 'Full'
+sophon --no-auto    # Start with 'None'
+sophon --basic      # Start with 'Basic'
+sophon --plus       # Start with 'Plus'
+sophon --semi       # Start with 'Semi'
+sophon --full       # Start with 'Full'
 ```
 
 ### When Creating a New Plan
 
 ```bash
-plandex new --no-auto    # Create with 'None'
-plandex new --basic      # Create with 'Basic'
-plandex new --plus       # Create with 'Plus'
-plandex new --semi       # Create with 'Semi'
-plandex new --full       # Create with 'Full'
+sophon new --no-auto    # Create with 'None'
+sophon new --basic      # Create with 'Basic'
+sophon new --plus       # Create with 'Plus'
+sophon new --semi       # Create with 'Semi'
+sophon new --full       # Create with 'Full'
 ```
 
 ### Using the REPL
@@ -90,7 +90,7 @@ Complete manual control with no automation:
 
 ### Basic
 
-_Equivalent to Plandex v1 autonomy level_
+_Equivalent to Sophon v1 autonomy level_
 
 Minimal automation:
 
@@ -116,7 +116,7 @@ Smart context management and manual command execution:
 
 ### Semi
 
-_Default autonomy level for a fresh Plandex v2 install_
+_Default autonomy level for a fresh Sophon v2 install_
 
 Automatic context loading:
 
@@ -148,9 +148,9 @@ Complete automation:
 You can give a plan custom autonomy settings by setting config values directly:
 
 ```bash
-plandex set-config auto-continue true
-plandex set-config auto-build true
-plandex set-config auto-load-context true
+sophon set-config auto-continue true
+sophon set-config auto-build true
+sophon set-config auto-load-context true
 ```
 
 [More details on configuration](./configuration.md)

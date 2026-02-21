@@ -3,12 +3,12 @@ package cmd
 import (
 	"fmt"
 	"path/filepath"
-	"plandex/api"
-	"plandex/auth"
-	"plandex/lib"
-	"plandex/term"
+	"sophon/api"
+	"sophon/auth"
+	"sophon/lib"
+	"sophon/term"
 
-	"plandex-shared"
+	"sophon-shared"
 	"github.com/spf13/cobra"
 )
 

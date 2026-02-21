@@ -3,7 +3,7 @@
 set -euo pipefail
 
 echo "Opening application in browser..."
-plandex-dev browser "http://localhost:8765/error-test.html" || {
+sophon-dev browser "http://localhost:8765/error-test.html" || {
   echo "Browser command failed. Exiting."
   exit 1
 }
@@ -20,8 +20,8 @@ plandex-dev browser "http://localhost:8765/error-test.html" || {
     
 #     # Open the browser to the application
 #     echo "Opening application in browser..."
-#     plandex-dev browser "http://localhost:8765/error-test.html"
-#     echo "plandex-dev browser exit code: $?"
+#     sophon-dev browser "http://localhost:8765/error-test.html"
+#     echo "sophon-dev browser exit code: $?"
     
 #     # If browser command fails, kill the server and exit
 #     if [ $? -ne 0 ]; then
@@ -45,8 +45,8 @@ plandex-dev browser "http://localhost:8765/error-test.html" || {
     
 #     # Open the browser to the application
 #     echo "Opening application in browser..."
-#     plandex-dev browser "http://localhost:8765"
-#     echo "plandex-dev browser exit code: $?"
+#     sophon-dev browser "http://localhost:8765"
+#     echo "sophon-dev browser exit code: $?"
     
 #     # If browser command fails, kill the server and exit
 #     if [ $? -ne 0 ]; then
