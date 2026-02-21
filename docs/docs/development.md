@@ -22,12 +22,12 @@ echo $GOPATH
 export GOPATH=<path-to-go-folder>
 ```
 
-Make sure the PostgreSQL server is running and create a database called `plandex`.
+Make sure the PostgreSQL server is running and create a database called `sophon`.
 
 Then make sure the following environment variables are set:
 
 ```bash
-export DATABASE_URL=postgres://user:password@host:5432/plandex?sslmode=disable # replace with your own database URL
+export DATABASE_URL=postgres://user:password@host:5432/sophon?sslmode=disable # replace with your own database URL
 export GOENV=development
 ```
 
@@ -49,8 +49,8 @@ This creates watchers with `reflex` to rebuild both the server and the CLI when 
 
 The server runs on port 8099 by default.
 
-After each build, the CLI is copied to `/usr/local/bin/plandex-dev`so you can use it with just `plandex-dev` in any directory. A `pdxd` alias is also created. Note the difference from the `plandex` binary and `pdx` aliases which are installed for production usage—aliases are used for development to avoid overwriting the production install.
+After each build, the CLI is copied to `/usr/local/bin/sophon-dev`so you can use it with just `sophon-dev` in any directory. A `sdxd` alias is also created. Note the difference from the `sophon` binary and `sdx` aliases which are installed for production usage—aliases are used for development to avoid overwriting the production install.
 
 The output directory can be changed with the `PLANDEX_DEV_CLI_OUT_DIR` environment variable. The binary name can be changed with `PLANDEX_DEV_CLI_NAME` and the alias can be changed with `PLANDEX_DEV_CLI_ALIAS`.
 
-When running the Plandex CLI, set `export PLANDEX_ENV=development` to run in development mode, which connects to the development server by default.
+When running the Sophon CLI, set `export PLANDEX_ENV=development` to run in development mode, which connects to the development server by default.

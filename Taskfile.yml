@@ -1,0 +1,20 @@
+version: '3'
+
+tasks:
+  build:
+    desc: Build the Sophon IDE
+    cmds:
+      - go build -o sophon-ide main.go
+    dir: app/sophon-ide
+
+  run:
+    desc: Run the Sophon IDE
+    cmds:
+      - go run main.go
+    dir: app/sophon-ide
+
+  rebrand:
+    desc: Rebrand the project to Sophon
+    cmds:
+      - find . -type f -not -path '*/.*' -exec sed -i 's/Plandex/Sophon/g' {} +
+      - find . -type f -not -path '*/.*' -exec sed -i 's/plandex/sophon/g' {} +

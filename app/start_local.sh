@@ -29,7 +29,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
     fi
 fi
 
-echo "Starting the local Plandex server and database..."
+echo "Starting the local Sophon server and database..."
 
-docker compose pull plandex-server
+docker compose pull sophon-server
 docker compose up

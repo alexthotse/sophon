@@ -33,7 +33,7 @@ if ! [ -x "$(command -v reflex)" ]; then
 fi
 
 terminate() {
-  pkill -f 'plandex-server' # Assuming plandex-server is the name of your process
+  pkill -f 'sophon-server' # Assuming sophon-server is the name of your process
   kill -TERM "$pid1" 2>/dev/null
   kill -TERM "$pid2" 2>/dev/null
 }
@@ -44,14 +44,14 @@ trap terminate SIGTERM SIGINT
 
 cd ../
 
-export DATABASE_URL=postgres://ds:@localhost/plandex_local?sslmode=disable
+export DATABASE_URL=postgres://ds:@localhost/sophon_local?sslmode=disable
 export GOENV=development
 export LOCAL_MODE=1
 
 reflex -r '^(cli|shared)/.*\.(go|mod|sum)$' -- sh -c 'cd cli && ./dev.sh' &
 pid1=$!
 
-reflex -r '^(server|shared)/.*\.(go|mod|sum|py)$' -s -- sh -c 'cd server && go build && ./plandex-server' &
+reflex -r '^(server|shared)/.*\.(go|mod|sum|py)$' -s -- sh -c 'cd server && go build && ./sophon-server' &
 pid2=$!
 
 wait $pid1

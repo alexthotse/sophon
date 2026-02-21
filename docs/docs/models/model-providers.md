@@ -5,56 +5,56 @@ sidebar_label: Providers
 
 # Model Providers
 
-If you use [Plandex Cloud](../hosting/cloud.md) in **Integrated Models Mode**, you can use Plandex credits to pay for AI models. No separate accounts or API keys are required in this case.
+If you use [Sophon Cloud](../hosting/cloud.md) in **Integrated Models Mode**, you can use Sophon credits to pay for AI models. No separate accounts or API keys are required in this case.
 
-If you instead use **BYO API Key Mode** with Plandex Cloud, or if you self-host Plandex, you'll need to set API keys (or other credentials) for the providers you want to use.
+If you instead use **BYO API Key Mode** with Sophon Cloud, or if you self-host Sophon, you'll need to set API keys (or other credentials) for the providers you want to use.
 
 To see available providers, run:
 
 ```bash
 \providers # REPL
-plandex providers # CLI
+sophon providers # CLI
 ```
 
 ## API Keys / Environment Variables
 
-API keys or credentials are set through **environment variables** when running the Plandex CLI. For example:
+API keys or credentials are set through **environment variables** when running the Sophon CLI. For example:
 
 ```bash
 export OPENROUTER_API_KEY=...
 export OPENAI_API_KEY=...
 export ANTHROPIC_API_KEY=...
 
-plandex # start the Plandex REPL
+sophon # start the Sophon REPL
 ```
 
 ## Provider Selection
 
 Many models can be served by multiple different providers. For example, OpenAI models are available via OpenAI, Microsoft Azure, and OpenRouter.
 
-When multiple providers are available for a model, which provider is selected depends on the authentication environment variables that are set when running the CLI or REPL. If environment variables are set for multiple providers, the direct provider takes precedence. For example, if you set both `ANTHROPIC_API_KEY` (for the direct Anthropic API) and `OPENROUTER_API_KEY` (for OpenRouter), Plandex will use the direct Anthropic API for Anthropic models.
+When multiple providers are available for a model, which provider is selected depends on the authentication environment variables that are set when running the CLI or REPL. If environment variables are set for multiple providers, the direct provider takes precedence. For example, if you set both `ANTHROPIC_API_KEY` (for the direct Anthropic API) and `OPENROUTER_API_KEY` (for OpenRouter), Sophon will use the direct Anthropic API for Anthropic models.
 
 ## Claude Pro/Max Subscription
 
-If you have a Claude Pro or Max subscription, Plandex can use it when calling Anthropic models. [Learn more.](./claude-subscription.md)
+If you have a Claude Pro or Max subscription, Sophon can use it when calling Anthropic models. [Learn more.](./claude-subscription.md)
 
 ## Built-In Providers
 
 ### OpenRouter
 
-Apart from Plandex Cloud's Integrated Models Mode, the quickest way to get started is to use [OpenRouter.ai](https://openrouter.ai/), which allows you to use a wide range of models—including all those Plandex uses by default—with a single account and API key.
+Apart from Sophon Cloud's Integrated Models Mode, the quickest way to get started is to use [OpenRouter.ai](https://openrouter.ai/), which allows you to use a wide range of models—including all those Sophon uses by default—with a single account and API key.
 
 To use OpenRouter, you'll need to create an account and generate an API key, then set the `OPENROUTER_API_KEY` environment variable.
 
 ```bash
 export OPENROUTER_API_KEY=...
 
-plandex # start the Plandex REPL
+sophon # start the Sophon REPL
 ```
 
-You can also use OpenRouter alongside other providers. For example, if you set both `OPENROUTER_API_KEY` and `OPENAI_API_KEY`, Plandex will use the OpenAI API directly for OpenAI models and OpenRouter for other models. Using direct providers offers slightly lower latency and costs about 5% less than OpenRouter.
+You can also use OpenRouter alongside other providers. For example, if you set both `OPENROUTER_API_KEY` and `OPENAI_API_KEY`, Sophon will use the OpenAI API directly for OpenAI models and OpenRouter for other models. Using direct providers offers slightly lower latency and costs about 5% less than OpenRouter.
 
-If you set a `OPENROUTER_API_KEY` and are also using other providers, Plandex will also **fail over** to OpenRouter if another provider has an error. This offers a strong layer of redundancy since OpenRouter itself routes model calls across a number of different upstream providers.
+If you set a `OPENROUTER_API_KEY` and are also using other providers, Sophon will also **fail over** to OpenRouter if another provider has an error. This offers a strong layer of redundancy since OpenRouter itself routes model calls across a number of different upstream providers.
 
 ### OpenAI
 
@@ -143,19 +143,19 @@ export PERPLEXITY_API_KEY=... # set your Perplexity API key for Perplexity model
 
 ## Custom Providers
 
-If you're self-hosting Plandex, you can also use with models from any provider that provides an OpenAI-compatible API.
+If you're self-hosting Sophon, you can also use with models from any provider that provides an OpenAI-compatible API.
 
 To configure custom providers, you can use a dev-friendly JSON config file:
 
 ```bash
 \models custom # REPL
-plandex models custom # CLI
+sophon models custom # CLI
 ```
 
 [More details on custom providers](./custom-models.md)
 
 ## Local Models
 
-Plandex supports local models via [Ollama](https://ollama.com/). It doesn't require any authentication or API keys.
+Sophon supports local models via [Ollama](https://ollama.com/). It doesn't require any authentication or API keys.
  
 For more details, see the [Ollama Quickstart](./ollama.md).

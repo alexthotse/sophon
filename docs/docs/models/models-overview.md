@@ -5,35 +5,35 @@ sidebar_label: Overview
 
 # Models Overview
 
-By default, Plandex uses a mix of Anthropic, OpenAI, and Google models. While this is a good starting point, and is the recommended way to use Plandex for most users, full customization of models and providers is also supported.
+By default, Sophon uses a mix of Anthropic, OpenAI, and Google models. While this is a good starting point, and is the recommended way to use Sophon for most users, full customization of models and providers is also supported.
 
 ## Roles and Model Packs
 
-Plandex has multiple [roles](./roles.md) which are responsible for different aspects of planning, coding, and applying changes. Each role can be assigned a different model. A **model pack** is a mapping of roles to specific models.
+Sophon has multiple [roles](./roles.md) which are responsible for different aspects of planning, coding, and applying changes. Each role can be assigned a different model. A **model pack** is a mapping of roles to specific models.
 
 ## Built-in Models and Model Packs
 
-Plandex provides a curated set of built-in models and model packs.
+Sophon provides a curated set of built-in models and model packs.
 
 You can see the list of available model packs with:
 
 ```bash
 \model-packs # REPL
-plandex model-packs # CLI
+sophon model-packs # CLI
 ```
 
 You can see the details of a specific model pack with:
 
 ```bash
 \model-packs show model-pack-name # REPL
-plandex model-packs show model-pack-name # CLI
+sophon model-packs show model-pack-name # CLI
 ```
 
 You can see the list of available models with:
 
 ```bash
 \models available # REPL
-plandex models available # CLI
+sophon models available # CLI
 ```
 
 ## Model Settings
@@ -42,39 +42,39 @@ You can see the model settings for the current plan with:
 
 ```bash
 \models # REPL
-plandex models # CLI
+sophon models # CLI
 ```
 
 And you can see the default model settings for new plans with:
 
 ```bash
 \models default # REPL
-plandex models default # CLI
+sophon models default # CLI
 ```
 
 You can change the model settings for the current plan with:
 
 ```bash
 \set-model # REPL
-plandex set-model # CLI
+sophon set-model # CLI
 ```
 
 And you can set the default model settings for new plans with:
 
 ```bash
 \set-model default # REPL
-plandex set-model default # CLI
+sophon set-model default # CLI
 ```
 
 [More details on model settings](./model-settings.md)
 
 ## Providers
 
-Plandex offers flexibility on the providers you can use to serve models.
+Sophon offers flexibility on the providers you can use to serve models.
 
-If you use [Plandex Cloud](../hosting/cloud.md) in **Integrated Models Mode**, you can use Plandex credits to pay for AI models. In that case, you won't need to worry about providers, provider accounts, or API keys.
+If you use [Sophon Cloud](../hosting/cloud.md) in **Integrated Models Mode**, you can use Sophon credits to pay for AI models. In that case, you won't need to worry about providers, provider accounts, or API keys.
 
-If instead you use **BYO API Key Mode** with Plandex Cloud, or if you [self-host](../hosting/self-hosting/local-mode-quickstart.md) Plandex, you'll need to set API keys (or other credentials) for the providers you want to use. Multiple built-in providers are supported. 
+If instead you use **BYO API Key Mode** with Sophon Cloud, or if you [self-host](../hosting/self-hosting/local-mode-quickstart.md) Sophon, you'll need to set API keys (or other credentials) for the providers you want to use. Multiple built-in providers are supported.
 
 If you're self-hosting, you can also configure custom providers—they just need to be OpenAI-compatible.
 
@@ -86,17 +86,17 @@ You can configure custom models, providers, and model packs with a dev-friendly 
 
 ```bash
 \models custom # REPL
-plandex models custom # CLI
+sophon models custom # CLI
 ```
 
 [More details on custom models, providers, and model packs](./custom-models.md)
 
 ## Model Performance
 
-While you can use Plandex with many different providers and models as described above, Plandex's prompts have mainly been written and tested against the built-in models and model packs, so you should expect them to give the best results.
+While you can use Sophon with many different providers and models as described above, Sophon's prompts have mainly been written and tested against the built-in models and model packs, so you should expect them to give the best results.
 
 ## Local Models
 
-Plandex supports local models via [Ollama](https://ollama.com/). For more details, see the [Ollama Quickstart](./ollama.md).
+Sophon supports local models via [Ollama](https://ollama.com/). For more details, see the [Ollama Quickstart](./ollama.md).
 
 

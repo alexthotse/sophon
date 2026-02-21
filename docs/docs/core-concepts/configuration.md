@@ -5,28 +5,28 @@ sidebar_label: Configuration
 
 # Configuration
 
-Plandex provides a flexible configuration system that lets you customize its behavior based on the task you're working on and your preferences.
+Sophon provides a flexible configuration system that lets you customize its behavior based on the task you're working on and your preferences.
 
 ## Viewing Config
 
 ```bash
-plandex config           # View current plan's configuration
-plandex config default   # View default configuration for new plans
+sophon config           # View current plan's configuration
+sophon config default   # View default configuration for new plans
 ```
 
 ## Modifying Config
 
 ```bash
-plandex set-config                       # Select from a list of options
-plandex set-config auto-apply true       # Set a specific option
-plandex set-config default auto-mode basic   # Set default for new plans
+sophon set-config                       # Select from a list of options
+sophon set-config auto-apply true       # Set a specific option
+sophon set-config default auto-mode basic   # Set default for new plans
 ```
 
 ## Key Settings
 
 ### Autonomy Level
 
-Autonomy settings control the overall level of automation Plandex will use. See the [Autonomy](./autonomy.md) page for more details and shortcuts for setting autonomy levels.
+Autonomy settings control the overall level of automation Sophon will use. See the [Autonomy](./autonomy.md) page for more details and shortcuts for setting autonomy levels.
 
 | Setting               | Description                                                      | Default |
 | --------------------- | ---------------------------------------------------------------- | ------- |
@@ -87,7 +87,7 @@ Many settings can be overridden with command line flags:
 
 ```bash
 # this will apply changes, automatically execute commands, and automatically debug regardless of your autonomy level and config settings
-plandex tell "add a feature" --apply --auto-exec --debug
+sophon tell "add a feature" --apply --auto-exec --debug
 ```
 
 These overrides apply only to the current command execution and don't change the saved configuration.

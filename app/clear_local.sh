@@ -6,7 +6,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 # Change to the app directory if we're not already there
 cd "$SCRIPT_DIR"
 
-echo "WARNING: This will delete all Plandex server data and reset the database."
+echo "WARNING: This will delete all Sophon server data and reset the database."
 echo "This action cannot be undone."
 read -p "Are you sure you want to continue? (y/N) " -n 1 -r
 echo

@@ -5,7 +5,7 @@ sidebar_label: Roles
 
 # Model Roles
 
-Plandex has multiple **roles** that are used for different aspects of its functionality.
+Sophon has multiple **roles** that are used for different aspects of its functionality.
 
 ## Roles
 

@@ -5,7 +5,7 @@ sidebar_label: Model Packs
 
 # Built-In Model Packs
 
-Plandex includes a curated selection of built-in model packs that have been tested and optimized for different use cases.
+Sophon includes a curated selection of built-in model packs that have been tested and optimized for different use cases.
 
 *A model pack is a mapping of [model roles](../roles.md) to [models](./built-in-models.md).*
 

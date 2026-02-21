@@ -5,10 +5,10 @@ sidebar_label: Custom Models
 
 # Custom Models, Providers, and Model Packs
 
-You can extend Plandex with custom models, providers, and model packs using a JSON file.
+You can extend Sophon with custom models, providers, and model packs using a JSON file.
 
 ```bash
-plandex models custom # edit the custom models file
+sophon models custom # edit the custom models file
 \models custom # REPL
 ```
 
@@ -18,7 +18,7 @@ The template file uses a JSON schema, allowing most editors to provide autocompl
 
 ## Support Levels
 
-The level of custom model support depends on how you use Plandex.
+The level of custom model support depends on how you use Sophon.
 
 **Self-hosted**: Everything - custom models, providers, and model packs are fully supported.
 
@@ -32,7 +32,7 @@ Here's a minimal example that adds a model from Together.ai:
 
 ```json
 {
-  "$schema": "https://plandex.ai/schemas/models-input.schema.json",
+  "$schema": "https://sophon.ai/schemas/models-input.schema.json",
   "providers": [
     {
       "name": "togetherai",
@@ -97,7 +97,7 @@ Define models with their capabilities and provider mappings:
 
 ```json
 {
-  "$schema": "https://plandex.ai/schemas/models-input.schema.json",
+  "$schema": "https://sophon.ai/schemas/models-input.schema.json",
   "models": [
     {
       "modelId": "my-model",
@@ -139,7 +139,7 @@ Create your own combinations of models for different roles:
 
 ```json
 {
-  "$schema": "https://plandex.ai/schemas/models-input.schema.json",
+  "$schema": "https://sophon.ai/schemas/models-input.schema.json",
   "modelPacks": [
     {
       "name": "custom-pack",
@@ -206,7 +206,7 @@ Here's a full example combining `providers`, `models`, and `modelPacks`:
 
 ```json
 {
-  "$schema": "https://plandex.ai/schemas/models-input.schema.json",
+  "$schema": "https://sophon.ai/schemas/models-input.schema.json",
   "providers": [
     {
       "name": "replicate",

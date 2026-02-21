@@ -5,13 +5,13 @@ sidebar_label: CLI Reference
 
 # CLI Reference
 
-All Plandex CLI commands and their options.
+All Sophon CLI commands and their options.
 
 ## Usage
 
 ```bash
-plandex [command] [flags]
-pdx [command] [flags] # 'pdx' is an alias for 'plandex'
+sophon [command] [flags]
+sdx [command] [flags] # 'sdx' is an alias for 'sophon'
 ```
 
 ## Help
@@ -19,8 +19,8 @@ pdx [command] [flags] # 'pdx' is an alias for 'plandex'
 Built-in help.
 
 ```bash
-plandex help
-pdx h # alias
+sophon help
+sdx h # alias
 ```
 
 `--all/-a`: List all commands.
@@ -28,26 +28,26 @@ pdx h # alias
 For help on a specific command, use:
 
 ```bash
-plandex [command] --help
+sophon [command] --help
 ```
 
 ## REPL
 
-The easiest way to use Plandex is through the REPL. Start it in your project directory with:
+The easiest way to use Sophon is through the REPL. Start it in your project directory with:
 
 ```bash
-plandex
+sophon
 ```
 
 or for short:
 
 ```bash
-pdx
+sdx
 ```
 
 ### Flags
 
-The REPL has a few convenient flags you can use to start it with different modes, autonomy settings, and model packs. You can pass any of these to `plandex` or `pdx` when starting the REPL.
+The REPL has a few convenient flags you can use to start it with different modes, autonomy settings, and model packs. You can pass any of these to `sophon` or `sdx` when starting the REPL.
 
 ```
   Mode
@@ -84,8 +84,8 @@ All commands listed below can be run in the REPL by prefixing them with a backsl
 Start a new plan.
 
 ```bash
-plandex new
-plandex new -n new-plan # with name
+sophon new
+sophon new -n new-plan # with name
 ```
 
 `--name/-n`: Name of the new plan. The name is generated automatically after first prompt if no name is specified on creation.
@@ -129,10 +129,10 @@ List plans. Output includes index, when each plan was last updated, the current 
 Includes full details on plans in current directory. Also includes names of plans in parent directories and child directories.
 
 ```bash
-plandex plans
-plandex plans --archived # list archived plans only
+sophon plans
+sophon plans --archived # list archived plans only
 
-pdx pl # alias
+sdx pl # alias
 ```
 
 `--archived/-a`: List archived plans only.
@@ -142,8 +142,8 @@ pdx pl # alias
 Show current plan. Output includes when the plan was last updated and created, the current branch, the number of tokens in context, and the number of tokens in the conversation (prior to summarization).
 
 ```bash
-plandex current
-pdx cu # alias
+sophon current
+sdx cu # alias
 ```
 
 ### cd
@@ -151,27 +151,27 @@ pdx cu # alias
 Set current plan by name or index.
 
 ```bash
-plandex cd # select from a list of plans
-plandex cd some-plan # by name
-plandex cd 4 # by index in `plandex plans`
+sophon cd # select from a list of plans
+sophon cd some-plan # by name
+sophon cd 4 # by index in `sophon plans`
 ```
 
-With no arguments, Plandex prompts you with a list of plans to select from.
+With no arguments, Sophon prompts you with a list of plans to select from.
 
-With one argument, Plandex selects a plan by name or by index in the `plandex plans` list.
+With one argument, Sophon selects a plan by name or by index in the `sophon plans` list.
 
 ### delete-plan
 
 Delete a plan by name, index, range, pattern, or select from a list.
 
 ```bash
-plandex delete-plan # select from a list of plans
-plandex delete-plan some-plan # by name
-plandex delete-plan 4 # by index in `plandex plans`
-plandex delete-plan 2-4 # by range of indices
-plandex delete-plan 'docs-*' # by pattern
-plandex delete-plan --all # delete all plans
-pdx dp # alias
+sophon delete-plan # select from a list of plans
+sophon delete-plan some-plan # by name
+sophon delete-plan 4 # by index in `sophon plans`
+sophon delete-plan 2-4 # by range of indices
+sophon delete-plan 'docs-*' # by pattern
+sophon delete-plan --all # delete all plans
+sdx dp # alias
 ```
 
 `--all/-a`: Delete all plans.
@@ -181,8 +181,8 @@ pdx dp # alias
 Rename the current plan.
 
 ```bash
-plandex rename # prompt for new name
-plandex rename new-name # set new name
+sophon rename # prompt for new name
+sophon rename new-name # set new name
 ```
 
 ### archive
@@ -190,11 +190,11 @@ plandex rename new-name # set new name
 Archive a plan.
 
 ```bash
-plandex archive # select from a list of plans
-plandex archive some-plan # by name
-plandex archive 4 # by index in `plandex plans`
+sophon archive # select from a list of plans
+sophon archive some-plan # by name
+sophon archive 4 # by index in `sophon plans`
 
-pdx arc # alias
+sdx arc # alias
 ```
 
 ### unarchive
@@ -202,10 +202,10 @@ pdx arc # alias
 Unarchive a plan.
 
 ```bash
-plandex unarchive # select from a list of archived plans
-plandex unarchive some-plan # by name
-plandex unarchive 4 # by index in `plandex plans --archived`
-pdx unarc # alias
+sophon unarchive # select from a list of archived plans
+sophon unarchive some-plan # by name
+sophon unarchive 4 # by index in `sophon plans --archived`
+sdx unarc # alias
 ```
 
 ## Context
@@ -215,17 +215,17 @@ pdx unarc # alias
 Load files, directories, directory layouts, URLs, notes, images, or piped data into context.
 
 ```bash
-plandex load component.ts # single file
-plandex load component.ts action.ts reducer.ts # multiple files
-plandex load lib -r # loads lib and all its subdirectories
-plandex load tests/**/*.ts # loads all .ts files in tests and its subdirectories
-plandex load . --tree # loads the layout of the current directory and its subdirectories (file names only)
-plandex load https://redux.js.org/usage/writing-tests # loads the text-only content of the url
-npm test | plandex load # loads the output of `npm test`
-plandex load -n 'add logging statements to all the code you generate.' # load a note into context
-plandex load ui-mockup.png # load an image into context
+sophon load component.ts # single file
+sophon load component.ts action.ts reducer.ts # multiple files
+sophon load lib -r # loads lib and all its subdirectories
+sophon load tests/**/*.ts # loads all .ts files in tests and its subdirectories
+sophon load . --tree # loads the layout of the current directory and its subdirectories (file names only)
+sophon load https://redux.js.org/usage/writing-tests # loads the text-only content of the url
+npm test | sophon load # loads the output of `npm test`
+sophon load -n 'add logging statements to all the code you generate.' # load a note into context
+sophon load ui-mockup.png # load an image into context
 
-pdx l component.ts # alias
+sdx l component.ts # alias
 ```
 
 `--recursive/-r`: Load an entire directory and all its subdirectories.
@@ -236,7 +236,7 @@ pdx l component.ts # alias
 
 `--note/-n`: Load a note into context.
 
-`--force/-f`: Load files even when ignored by .gitignore or .plandexignore.
+`--force/-f`: Load files even when ignored by .gitignore or .sophonignore.
 
 `--detail/-d`: Image detail level when loading an image (high or low)—default is high. See https://platform.openai.com/docs/guides/vision/low-or-high-fidelity-image-understanding for more info.
 
@@ -245,9 +245,9 @@ pdx l component.ts # alias
 List everything in the current plan's context. Output includes index, name, type, token size, when the context added, and when the context was last updated.
 
 ```bash
-plandex ls
+sophon ls
 
-plandex list-context # longer alias
+sophon list-context # longer alias
 ```
 
 ### rm
@@ -255,13 +255,13 @@ plandex list-context # longer alias
 Remove context by index, range, name, or glob.
 
 ```bash
-plandex rm some-file.ts # by name
-plandex rm app/**/*.ts # by glob pattern
-plandex rm 4 # by index in `plandex ls`
-plandex rm 2-4 # by range of indices
+sophon rm some-file.ts # by name
+sophon rm app/**/*.ts # by glob pattern
+sophon rm 4 # by index in `sophon ls`
+sophon rm 2-4 # by range of indices
 
-plandex remove # longer alias
-plandex unload # longer alias
+sophon remove # longer alias
+sophon unload # longer alias
 ```
 
 ### show
@@ -269,8 +269,8 @@ plandex unload # longer alias
 Output context by name or index.
 
 ```bash
-plandex show some-file.ts # by name
-plandex show 4 # by index in `plandex ls`
+sophon show some-file.ts # by name
+sophon show 4 # by index in `sophon ls`
 ```
 
 ### update
@@ -278,8 +278,8 @@ plandex show 4 # by index in `plandex ls`
 Update any outdated context.
 
 ```bash
-plandex update
-pdx u # alias
+sophon update
+sdx u # alias
 ```
 
 ### clear
@@ -287,7 +287,7 @@ pdx u # alias
 Remove all context.
 
 ```bash
-plandex clear
+sophon clear
 ```
 
 ## Control
@@ -297,11 +297,11 @@ plandex clear
 Describe a task.
 
 ```bash
-plandex tell -f prompt.txt # from file
-plandex tell # open vim to write prompt
-plandex tell "add a cancel button to the left of the submit button" # inline
+sophon tell -f prompt.txt # from file
+sophon tell # open vim to write prompt
+sophon tell "add a cancel button to the left of the submit button" # inline
 
-pdx t # alias
+sdx t # alias
 ```
 
 `--file/-f`: File path containing prompt.
@@ -310,7 +310,7 @@ pdx t # alias
 
 `--no-build/-n`: Don't build proposed changes into pending file updates. Defaults to opposite of config value `auto-build`.
 
-`--bg`: Run task in the background. Only allowed if `--auto-load-context` and `--apply/-a` are not enabled. Not allowed with the default [autonomy level](./core-concepts/autonomy.md) in Plandex v2.
+`--bg`: Run task in the background. Only allowed if `--auto-load-context` and `--apply/-a` are not enabled. Not allowed with the default [autonomy level](./core-concepts/autonomy.md) in Sophon v2.
 
 `--auto-update-context`: Automatically confirm context updates. Defaults to config value `auto-update-context`.
 
@@ -337,16 +337,16 @@ pdx t # alias
 Continue the plan.
 
 ```bash
-plandex continue
+sophon continue
 
-pdx c # alias
+sdx c # alias
 ```
 
 `--stop/-s`: Stop after a single model response (don't auto-continue). Defaults to opposite of config value `auto-continue`.
 
 `--no-build/-n`: Don't build proposed changes into pending file updates. Defaults to opposite of config value `auto-build`.
 
-`--bg`: Run task in the background. Only allowed if `--auto-load-context` and `--apply/-a` are not enabled. Not allowed with the default [autonomy level](./core-concepts/autonomy.md) in Plandex v2.
+`--bg`: Run task in the background. Only allowed if `--auto-load-context` and `--apply/-a` are not enabled. Not allowed with the default [autonomy level](./core-concepts/autonomy.md) in Sophon v2.
 
 `--auto-update-context`: Automatically confirm context updates. Defaults to config value `auto-update-context`.
 
@@ -373,8 +373,8 @@ pdx c # alias
 Build any unbuilt pending changes from the plan conversation.
 
 ```bash
-plandex build
-pdx b # alias
+sophon build
+sdx b # alias
 ```
 
 `--bg`: Build in the background. Not allowed if `--apply/-a` is enabled.
@@ -404,13 +404,13 @@ pdx b # alias
 Ask a question or chat without making any changes.
 
 ```bash
-plandex chat "is it clear from the context how to add a new line chart?"
-pdx ch # alias
+sophon chat "is it clear from the context how to add a new line chart?"
+sdx ch # alias
 ```
 
 `--file/-f`: File path containing prompt.
 
-`--bg`: Run task in the background. Not allowed if `--auto-load-context` is enabled. Not allowed with the default [autonomy level](./core-concepts/autonomy.md) in Plandex v2.
+`--bg`: Run task in the background. Not allowed if `--auto-load-context` is enabled. Not allowed with the default [autonomy level](./core-concepts/autonomy.md) in Sophon v2.
 
 `--auto-update-context`: Automatically confirm context updates. Defaults to config value `auto-update-context`.
 
@@ -421,9 +421,9 @@ pdx ch # alias
 Repeatedly run a command and automatically attempt fixes until it succeeds, rolling back changes on failure. Defaults to 5 tries before giving up.
 
 ```bash
-plandex debug 'npm test' # try 5 times or until it succeeds
-plandex debug 10 'npm test' # try 10 times or until it succeeds
-pdx db 'npm test' # alias
+sophon debug 'npm test' # try 5 times or until it succeeds
+sophon debug 10 'npm test' # try 10 times or until it succeeds
+sdx db 'npm test' # alias
 ```
 
 `--commit/-c`: Commit changes to git when `--apply/-a` is passed. Defaults to config value `auto-commit`.
@@ -437,8 +437,8 @@ pdx db 'npm test' # alias
 Review pending changes in 'git diff' format or in a local browser UI.
 
 ```bash
-plandex diff
-plandex diff --ui
+sophon diff
+sophon diff --ui
 ```
 
 `--plain/-p`: Output diffs in plain text with no ANSI codes.
@@ -454,8 +454,8 @@ plandex diff --ui
 Apply pending changes to project files.
 
 ```bash
-plandex apply
-pdx ap # alias
+sophon apply
+sdx ap # alias
 ```
 
 `--auto-update-context`: Automatically confirm context updates. Defaults to config value `auto-update-context`.
@@ -477,12 +477,12 @@ pdx ap # alias
 Reject pending changes to one or more project files.
 
 ```bash
-plandex reject # select from a list of pending files to reject
-plandex reject file.ts # one file
-plandex reject file.ts another-file.ts # multiple files
-plandex reject --all # all pending files
+sophon reject # select from a list of pending files to reject
+sophon reject file.ts # one file
+sophon reject file.ts another-file.ts # multiple files
+sophon reject --all # all pending files
 
-pdx rj file.ts # alias
+sdx rj file.ts # alias
 ```
 
 `--all/-a`: Reject all pending files.
@@ -494,10 +494,10 @@ pdx rj file.ts # alias
 Show plan history.
 
 ```bash
-plandex log
+sophon log
 
-plandex history # alias
-plandex logs # alias
+sophon history # alias
+sophon logs # alias
 ```
 
 ### rewind
@@ -505,9 +505,9 @@ plandex logs # alias
 Rewind to a previous state.
 
 ```bash
-plandex rewind # select from a list of previous states to rewind to
-plandex rewind 3 # rewind 3 steps
-plandex rewind a7c8d66 # rewind to a specific step from `plandex log`
+sophon rewind # select from a list of previous states to rewind to
+sophon rewind 3 # rewind 3 steps
+sophon rewind a7c8d66 # rewind to a specific step from `sophon log`
 ```
 
 ### convo
@@ -515,10 +515,10 @@ plandex rewind a7c8d66 # rewind to a specific step from `plandex log`
 Show the current plan's conversation.
 
 ```bash
-plandex convo
-plandex convo 1 # show a specific message
-plandex convo 1-5 # show a range of messages
-plandex convo 3- # show all messages from 3 to the end
+sophon convo
+sophon convo 1 # show a specific message
+sophon convo 1-5 # show a range of messages
+sophon convo 3- # show all messages from 3 to the end
 ```
 
 `--plain/-p`: Output conversation in plain text with no ANSI codes.
@@ -528,7 +528,7 @@ plandex convo 3- # show all messages from 3 to the end
 Show the latest summary of the current plan.
 
 ```bash
-plandex summary
+sophon summary
 ```
 
 `--plain/-p`: Output summary in plain text with no ANSI codes.
@@ -540,8 +540,8 @@ plandex summary
 List plan branches. Output includes index, name, when the branch was last updated, the number of tokens in context, and the number of tokens in the conversation (prior to summarization).
 
 ```bash
-plandex branches
-pdx br # alias
+sophon branches
+sdx br # alias
 ```
 
 ### checkout
@@ -549,11 +549,11 @@ pdx br # alias
 Checkout or create a branch.
 
 ```bash
-plandex checkout # select from a list of branches or prompt to create a new branch
-plandex checkout some-branch # checkout by name or create a new branch with that name
-plandex checkout some-branch -y # checkout by name or create a new branch with that name, auto-confirming branch creation
+sophon checkout # select from a list of branches or prompt to create a new branch
+sophon checkout some-branch # checkout by name or create a new branch with that name
+sophon checkout some-branch -y # checkout by name or create a new branch with that name, auto-confirming branch creation
 
-pdx co # alias
+sdx co # alias
 ```
 
 `--yes/-y`: Auto-confirm creating a new branch if it doesn't exist.
@@ -563,11 +563,11 @@ pdx co # alias
 Delete a branch by name or index.
 
 ```bash
-plandex delete-branch # select from a list of branches
-plandex delete-branch some-branch # by name
-plandex delete-branch 4 # by index in `plandex branches`
+sophon delete-branch # select from a list of branches
+sophon delete-branch some-branch # by name
+sophon delete-branch 4 # by index in `sophon branches`
 
-pdx dlb # alias
+sdx dlb # alias
 ```
 
 ## Background Tasks / Streams
@@ -577,7 +577,7 @@ pdx dlb # alias
 List active and recently finished plan streams. Output includes stream ID, plan name, branch name, when the stream was started, and the stream's status (active, finished, stopped, errored, or waiting for a missing file to be selected).
 
 ```bash
-plandex ps
+sophon ps
 ```
 
 ### connect
@@ -585,10 +585,10 @@ plandex ps
 Connect to an active plan stream.
 
 ```bash
-plandex connect # select from a list of active streams
-plandex connect a4de # by stream ID in `plandex ps`
-plandex connect some-plan main # by plan name and branch name
-pdx conn # alias
+sophon connect # select from a list of active streams
+sophon connect a4de # by stream ID in `sophon ps`
+sophon connect some-plan main # by plan name and branch name
+sdx conn # alias
 ```
 
 ### stop
@@ -596,9 +596,9 @@ pdx conn # alias
 Stop an active plan stream.
 
 ```bash
-plandex stop # select from a list of active streams
-plandex stop a4de # by stream ID in `plandex ps`
-plandex stop some-plan main # by plan name and branch name
+sophon stop # select from a list of active streams
+sophon stop a4de # by stream ID in `sophon ps`
+sophon stop some-plan main # by plan name and branch name
 ```
 
 ## Configuration
@@ -608,7 +608,7 @@ plandex stop some-plan main # by plan name and branch name
 Show current plan config. Output includes configuration settings for the plan, such as autonomy level, model settings, and other plan-specific options.
 
 ```bash
-plandex config
+sophon config
 ```
 
 ### config default
@@ -616,7 +616,7 @@ plandex config
 Show the default config used for new plans. Output includes the default configuration settings that will be applied to newly created plans.
 
 ```bash
-plandex config default
+sophon config default
 ```
 
 ### set-config
@@ -624,11 +624,11 @@ plandex config default
 Update configuration settings for the current plan.
 
 ```bash
-plandex set-config # select from a list of config options
-plandex set-config auto-context true # set a specific config option
+sophon set-config # select from a list of config options
+sophon set-config auto-context true # set a specific config option
 ```
 
-With no arguments, Plandex prompts you to select from a list of config options.
+With no arguments, Sophon prompts you to select from a list of config options.
 
 With arguments, allows you to directly set specific configuration options for the current plan.
 
@@ -637,8 +637,8 @@ With arguments, allows you to directly set specific configuration options for th
 Update the default configuration settings for new plans.
 
 ```bash
-plandex set-config default # select from a list of config options
-plandex set-config default auto-mode basic # set a specific default config option
+sophon set-config default # select from a list of config options
+sophon set-config default auto-mode basic # set a specific default config option
 ```
 
 Works exactly the same as set-config above, but sets the default configuration for all new plans instead of only the current plan.
@@ -648,25 +648,25 @@ Works exactly the same as set-config above, but sets the default configuration f
 Update the auto-mode (autonomy level) for the current plan.
 
 ```bash
-plandex set-auto # select from a list of auto-modes
-plandex set-auto full # set to full automation
-plandex set-auto semi # set to semi-auto mode
-plandex set-auto plus # set to plus mode
-plandex set-auto basic # set to basic mode
-plandex set-auto none # set to none (step-by-step, no automation)
+sophon set-auto # select from a list of auto-modes
+sophon set-auto full # set to full automation
+sophon set-auto semi # set to semi-auto mode
+sophon set-auto plus # set to plus mode
+sophon set-auto basic # set to basic mode
+sophon set-auto none # set to none (step-by-step, no automation)
 ```
 
-With no arguments, Plandex prompts you to select from a list of automation levels.
+With no arguments, Sophon prompts you to select from a list of automation levels.
 
-With one argument, Plandex sets the automation level directly to the specified value.
+With one argument, Sophon sets the automation level directly to the specified value.
 
 ### set-auto default
 
 Set the default auto-mode for new plans.
 
 ```bash
-plandex set-auto default # select from a list of auto-modes
-plandex set-auto default basic # set default to basic mode
+sophon set-auto default # select from a list of auto-modes
+sophon set-auto default basic # set default to basic mode
 ```
 
 Works exactly the same as set-auto above, but sets the default automation level for all new plans instead of only the current plan.
@@ -678,7 +678,7 @@ Works exactly the same as set-auto above, but sets the default automation level 
 Show current plan models and model settings.
 
 ```bash
-plandex models
+sophon models
 ```
 
 ### models default
@@ -686,7 +686,7 @@ plandex models
 Show org-wide default models and model settings for new plans.
 
 ```bash
-plandex models default
+sophon models default
 ```
 
 ### models custom
@@ -694,9 +694,9 @@ plandex models default
 Manage custom models, providers, and model packs via JSON file.
 
 ```bash
-plandex models custom
-plandex models custom --save # save changes from the default custom-models.json file to the server
-plandex models custom --file /path/to/models.json # import custom models/providers/model-packs from a non-default JSON file
+sophon models custom
+sophon models custom --save # save changes from the default custom-models.json file to the server
+sophon models custom --file /path/to/models.json # import custom models/providers/model-packs from a non-default JSON file
 ```
 
 `--save`: Save changes from the JSON file to the server.
@@ -716,8 +716,8 @@ With `--save`, it will skip opening the editor and sync changes from the JSON fi
 Show available models.
 
 ```bash
-plandex models available # show all available models
-plandex models available --custom # show available custom models only
+sophon models available # show all available models
+sophon models available --custom # show available custom models only
 ```
 
 `--custom`: Show available custom models only.
@@ -727,22 +727,22 @@ plandex models available --custom # show available custom models only
 Show all available model providers.
 
 ```bash
-plandex providers
-plandex providers --custom # show custom providers only (not supported on Plandex Cloud)
+sophon providers
+sophon providers --custom # show custom providers only (not supported on Sophon Cloud)
 ```
 
-`--custom/-c`: Show custom providers only (not supported on Plandex Cloud).
+`--custom/-c`: Show custom providers only (not supported on Sophon Cloud).
 
 ### set-model
 
 Update current plan models or model settings.
 
 ```bash
-plandex set-model # select from a list of model packs or edit via JSON
-plandex set-model daily # set model pack by name
-plandex set-model --json # edit plan's model settings via JSON file at default path
-plandex set-model --save # save changes from the plan's model settings JSON file to the server
-plandex set-model --json --file /path/to/settings.json # set plan's model settings from a JSON file at a non-default path
+sophon set-model # select from a list of model packs or edit via JSON
+sophon set-model daily # set model pack by name
+sophon set-model --json # edit plan's model settings via JSON file at default path
+sophon set-model --save # save changes from the plan's model settings JSON file to the server
+sophon set-model --json --file /path/to/settings.json # set plan's model settings from a JSON file at a non-default path
 ```
 
 `--json`: Edit plan's model settings via JSON file at default path.
@@ -751,9 +751,9 @@ plandex set-model --json --file /path/to/settings.json # set plan's model settin
 
 `--file`: Set plan's model settings from a JSON file at a non-default path.
 
-With no arguments, Plandex prompts you to either select a model pack or edit settings via JSON.
+With no arguments, Sophon prompts you to either select a model pack or edit settings via JSON.
 
-When using JSON mode without `--save`, Plandex will:
+When using JSON mode without `--save`, Sophon will:
 
 - Write current settings to a JSON file
 - Open it in your configured editor
@@ -764,12 +764,12 @@ With `--save`, it will skip opening the editor and sync changes from the JSON fi
 Model pack shortcuts are still available:
 
 ```bash
-plandex set-model daily
-plandex set-model reasoning
-plandex set-model strong
-plandex set-model cheap
-plandex set-model oss
-plandex set-model gemini
+sophon set-model daily
+sophon set-model reasoning
+sophon set-model strong
+sophon set-model cheap
+sophon set-model oss
+sophon set-model gemini
 ```
 
 ### set-model default
@@ -777,11 +777,11 @@ plandex set-model gemini
 Update org-wide default model settings for new plans.
 
 ```bash
-plandex set-model default # select from a list of model packs or edit via JSON
-plandex set-model default daily # set default model pack by name
-plandex set-model default --json # edit default settings via JSON file at default path
-plandex set-model default --save # save changes from the default model settings JSON file to the server
-plandex set-model default --json --file /path/to/settings.json # set default model settings from a JSON file at a non-default path
+sophon set-model default # select from a list of model packs or edit via JSON
+sophon set-model default daily # set default model pack by name
+sophon set-model default --json # edit default settings via JSON file at default path
+sophon set-model default --save # save changes from the default model settings JSON file to the server
+sophon set-model default --json --file /path/to/settings.json # set default model settings from a JSON file at a non-default path
 ```
 
 Works exactly the same as `set-model` above, but sets the default model settings for all new plans instead of only the current plan.
@@ -791,8 +791,8 @@ Works exactly the same as `set-model` above, but sets the default model settings
 Show all available model packs.
 
 ```bash
-plandex model-packs # list built-in and custom model packs
-plandex model-packs --custom # list custom model packs only
+sophon model-packs # list built-in and custom model packs
+sophon model-packs --custom # list custom model packs only
 ```
 
 `--custom`: Show available custom (user-created) model packs only.
@@ -803,8 +803,8 @@ plandex model-packs --custom # list custom model packs only
 Show a built-in or custom model pack's settings.
 
 ```bash
-plandex model-packs show # select from a list of built-in and custom model packs
-plandex model-packs show some-model-pack # by name
+sophon model-packs show # select from a list of built-in and custom model packs
+sophon model-packs show some-model-pack # by name
 ```
 
 ## Account Management
@@ -814,20 +814,20 @@ plandex model-packs show some-model-pack # by name
 Sign in, accept an invite, or create an account.
 
 ```bash
-plandex sign-in
+sophon sign-in
 ```
 
-`--pin`: Sign in with a pin from the Plandex Cloud web UI.
+`--pin`: Sign in with a pin from the Sophon Cloud web UI.
 
-Unless you pass `--pin` (from the Plandex Cloud web UI), Plandex will prompt you for all required information to sign in, accept an invite, or create an account.
+Unless you pass `--pin` (from the Sophon Cloud web UI), Sophon will prompt you for all required information to sign in, accept an invite, or create an account.
 
 ### invite
 
 Invite a user to join your org.
 
 ```bash
-plandex invite # prompt for email, name, and role
-plandex invite name@domain.com 'Full Name' member # invite with email, name, and role
+sophon invite # prompt for email, name, and role
+sophon invite name@domain.com 'Full Name' member # invite with email, name, and role
 ```
 
 Users can be invited as `member`, `admin`, or `owner`.
@@ -837,8 +837,8 @@ Users can be invited as `member`, `admin`, or `owner`.
 Revoke an invite or remove a user from your org.
 
 ```bash
-plandex revoke # select from a list of users and invites
-plandex revoke name@domain.com # by email
+sophon revoke # select from a list of users and invites
+sophon revoke name@domain.com # by email
 ```
 
 ### users
@@ -846,23 +846,23 @@ plandex revoke name@domain.com # by email
 List users and pending invites in your org.
 
 ```bash
-plandex users
+sophon users
 ```
 
 ## Integrations
 
 ### connect-claude
 
-Connect a Claude Pro or Max subscription. When Plandex calls Anthropic models, it will use your Claude subscription up to its quota.
+Connect a Claude Pro or Max subscription. When Sophon calls Anthropic models, it will use your Claude subscription up to its quota.
 
 ```bash
-plandex connect-claude
+sophon connect-claude
 ```
 
 ### disconnect-claude
 
 ```bash
-plandex disconnect-claude
+sophon disconnect-claude
 ```
 
 Disconnect your Claude Pro or Max subscription and clear credentials from your device. 
@@ -870,31 +870,31 @@ Disconnect your Claude Pro or Max subscription and clear credentials from your d
 ### claude-status
 
 ```bash
-plandex claude-status
+sophon claude-status
 ```
 
 Shows whether a Claude Pro or Max subscription is connected, and whether the quota has been exceeded.
 
-## Plandex Cloud
+## Sophon Cloud
 
 ### billing
 
 Show the billing settings page.
 
 ```bash
-plandex billing
+sophon billing
 ```
 
 ### usage
 
-Show Plandex Cloud current balance and usage report. Includes recent spend, amount saved by input caching, a breakdown of spend by plan, category, and model, and a log of individual transactions with the `--log` flag.
+Show Sophon Cloud current balance and usage report. Includes recent spend, amount saved by input caching, a breakdown of spend by plan, category, and model, and a log of individual transactions with the `--log` flag.
 
 Defaults to showing usage for the current session if you're using the REPL. Otherwise, defaults to showing usage for the day so far.
 
 Requires **Integrated Models** mode.
 
 ```bash
-plandex usage
+sophon usage
 ```
 
 `--today`: Show usage for the day so far.

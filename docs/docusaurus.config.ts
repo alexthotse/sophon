@@ -5,12 +5,12 @@ import type * as Preset from '@docusaurus/preset-classic';
 // import redirect from "@docusaurus/plugin-client-redirects"
 
 const config: Config = {
-  title: 'Plandex Docs',
+  title: 'Sophon Docs',
   tagline: 'An AI coding engine for large, real-world tasks',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://docs.plandex.ai',
+  url: 'https://docs.sophon.ai',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -34,7 +34,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/', // Serve the docs at the site's root
           editUrl:
-            'https://github.com/plandex-ai/plandex/tree/main/docs/',
+            'https://github.com/sophon-ai/sophon/tree/main/docs/',
         },
         blog: false, // Disable the blog
         theme: {
@@ -46,45 +46,45 @@ const config: Config = {
   ],
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/plandex-social-preview.png',
+    image: 'img/sophon-social-preview.png',
     colorMode: {
       defaultMode: "dark",
     },  
     navbar: {
       title: '',
       logo: {
-        alt: 'Plandex Logo',
-        src: 'img/plandex-logo-light.png',
-        srcDark: 'img/plandex-logo-dark.png',
-        href: "https://plandex.ai",
+        alt: 'Sophon Logo',
+        src: 'img/sophon-logo-light.png',
+        srcDark: 'img/sophon-logo-dark.png',
+        href: "https://sophon.ai",
         height: "2.7rem",
       },
       items: [
         {
-          href: 'https://github.com/plandex-ai/plandex',
+          href: 'https://github.com/sophon-ai/sophon',
           label: 'GitHub',
           position: 'right',
         },
         {
           label: 'Discord',
-          href: 'https://discord.gg/plandex-ai',
+          href: 'https://discord.gg/sophon-ai',
           position: 'right',
         },
         {
           label: 'X',
-          href: 'https://x.com/PlandexAI',
+          href: 'https://x.com/SophonAI',
           position: 'right',
         },
         {
           label: 'YouTube',
-          href: 'https://www.youtube.com/@plandex-ny5ry',
+          href: 'https://www.youtube.com/@sophon-ny5ry',
           position: 'right',
         },
       ],
     },
     footer: {
       style: 'dark',      
-      copyright: `Copyright © ${new Date().getFullYear()} PlandexAI, Inc.`,
+      copyright: `Copyright © ${new Date().getFullYear()} SophonAI, Inc.`,
     },
     prism: {
       theme: prismThemes.github,
@@ -96,7 +96,7 @@ const config: Config = {
       appId: 'EG57NOYLYX',
       // Public API key: it is safe to commit it
       apiKey: 'a811f8bcdd87a8b3fe7f22a353b968ef',
-      indexName: 'plandex',
+      indexName: 'sophon',
     }
   } satisfies Preset.ThemeConfig,
 

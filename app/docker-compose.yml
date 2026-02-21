@@ -1,46 +1,45 @@
 services:
-  plandex-postgres:
+  sophon-postgres:
     image: postgres:latest
     restart: always
     environment:
-      POSTGRES_PASSWORD: plandex
-      POSTGRES_USER: plandex
-      POSTGRES_DB: plandex
+      POSTGRES_PASSWORD: sophon
+      POSTGRES_USER: sophon
+      POSTGRES_DB: sophon
     ports:
       - "5432:5432"
     volumes:
-      - plandex-db:/var/lib/postgresql/data
+      - sophon-db:/var/lib/postgresql/data
     networks:
-      - plandex-network
-  plandex-server:
-    image: plandexai/plandex-server:latest
-    # build:
-    #   context: .
-    #   dockerfile: server/Dockerfile
+      - sophon-network
+  sophon-server:
+    build:
+      context: .
+      dockerfile: sophon-server/Dockerfile
     volumes:
-      - plandex-files:/plandex-server
+      - sophon-files:/sophon-server
     ports:
       - "8099:8099"
       - "4000:4000"
     environment:
-      DATABASE_URL: "postgres://plandex:plandex@plandex-postgres:5432/plandex?sslmode=disable"
+      DATABASE_URL: "postgres://sophon:sophon@sophon-postgres:5432/sophon?sslmode=disable"
       GOENV: development
       LOCAL_MODE: 1
-      PLANDEX_BASE_DIR: /plandex-server
+      PLANDEX_BASE_DIR: /sophon-server
       OLLAMA_BASE_URL: http://host.docker.internal:11434
       
     extra_hosts:
       - "host.docker.internal:host-gateway"
     networks:
-      - plandex-network
+      - sophon-network
     depends_on:
-      - plandex-postgres
-    command: [ "/bin/sh", "-c", "/scripts/wait-for-it.sh plandex-postgres:5432 -- ./plandex-server" ]
+      - sophon-postgres
+    command: [ "/bin/sh", "-c", "/scripts/wait-for-it.sh sophon-postgres:5432 -- ./sophon-server" ]
 
 networks:
-  plandex-network:
+  sophon-network:
     driver: bridge
 
 volumes:
-  plandex-db:
-  plandex-files:
+  sophon-db:
+  sophon-files:
