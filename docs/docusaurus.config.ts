@@ -34,7 +34,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/', // Serve the docs at the site's root
           editUrl:
-            'https://github.com/sophon-ai/sophon/tree/main/docs/',
+            'https://github.com/plandex-ai/sophon/tree/main/docs/',
         },
         blog: false, // Disable the blog
         theme: {
@@ -61,7 +61,7 @@ const config: Config = {
       },
       items: [
         {
-          href: 'https://github.com/sophon-ai/sophon',
+          href: 'https://github.com/plandex-ai/sophon',
           label: 'GitHub',
           position: 'right',
         },

@@ -14,7 +14,7 @@ The quickstart requires git, docker, and docker-compose. It's designed for local
 1. Run the server in local mode: 
 
 ```bash
-git clone https://github.com/sophon-ai/sophon.git
+git clone https://github.com/plandex-ai/sophon.git
 cd sophon/app
 ./start_local.sh
 ```

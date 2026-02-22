@@ -37,15 +37,15 @@
 <br>
 
 [![Discord](https://img.shields.io/discord/1214825831973785600.svg?style=flat&logo=discord&label=Discord&refresh=1)](https://discord.gg/sophon-ai)
-[![GitHub Repo stars](https://img.shields.io/github/stars/sophon-ai/sophon?style=social)](https://github.com/sophon-ai/sophon)
+[![GitHub Repo stars](https://img.shields.io/github/stars/sophon-ai/sophon?style=social)](https://github.com/plandex-ai/sophon)
 [![Twitter Follow](https://img.shields.io/twitter/follow/SophonAI?style=social)](https://twitter.com/SophonAI)
 
 </div>
 
 <p align="center">
   <!-- Badges -->
-<a href="https://github.com/sophon-ai/sophon/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" /></a> <a href="https://github.com/sophon-ai/sophon/releases?q=cli"><img src="https://img.shields.io/github/v/release/sophon-ai/sophon?filter=cli*" alt="Release" /></a>
-<a href="https://github.com/sophon-ai/sophon/releases?q=server"><img src="https://img.shields.io/github/v/release/sophon-ai/sophon?filter=server*" alt="Release" /></a>
+<a href="https://github.com/plandex-ai/sophon/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" /></a> <a href="https://github.com/plandex-ai/sophon/releases?q=cli"><img src="https://img.shields.io/github/v/release/sophon-ai/sophon?filter=cli*" alt="Release" /></a>
+<a href="https://github.com/plandex-ai/sophon/releases?q=server"><img src="https://img.shields.io/github/v/release/sophon-ai/sophon?filter=server*" alt="Release" /></a>
 
   <!-- <a href="https://github.com/your_username/your_project/issues">
     <img src="https://img.shields.io/github/issues-closed/your_username/your_project.svg" alt="Issues Closed" />
@@ -216,8 +216,8 @@ Then just give the REPL help text a quick read, and you're ready go. The REPL st
 Please feel free to give your feedback, ask questions, report a bug, or just hang out:
 
 - [Discord](https://discord.gg/sophon-ai)
-- [Discussions](https://github.com/sophon-ai/sophon/discussions)
-- [Issues](https://github.com/sophon-ai/sophon/issues)
+- [Discussions](https://github.com/plandex-ai/sophon/discussions)
+- [Issues](https://github.com/plandex-ai/sophon/issues)
 
 ## Follow and subscribe
 

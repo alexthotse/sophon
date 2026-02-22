@@ -13,12 +13,12 @@ curl -sL https://sophon.ai/install.sh | bash
 
 ## Manual install
 
-Grab the appropriate binary for your platform from the latest [release](https://github.com/sophon-ai/sophon/releases) and put it somewhere in your `PATH`.
+Grab the appropriate binary for your platform from the latest [release](https://github.com/plandex-ai/sophon/releases) and put it somewhere in your `PATH`.
 
 ## Build from source
 
 ```bash
-git clone https://github.com/sophon-ai/sophon.git
+git clone https://github.com/plandex-ai/sophon.git
 cd sophon/app/cli
 go build -ldflags "-X sophon/version.Version=$(cat version.txt)"
 mv sophon /usr/local/bin # adapt as needed for your system

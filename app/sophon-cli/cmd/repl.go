@@ -22,8 +22,8 @@ import (
 	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 
-	"github.com/sophon-ai/go-prompt"
-	pstrings "github.com/sophon-ai/go-prompt/strings"
+	"github.com/plandex-ai/go-prompt"
+	pstrings "github.com/plandex-ai/go-prompt/strings"
 
 	"github.com/lithammer/fuzzysearch/fuzzy"
 )

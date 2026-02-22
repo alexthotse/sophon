@@ -82,7 +82,7 @@ export API_HOST=api.your-domain.ai
 The server can be run from a Dockerfile at `app/Dockerfile.server`:
 
 ```bash
-git clone https://github.com/sophon-ai/sophon.git
+git clone https://github.com/plandex-ai/sophon.git
 VERSION=$(cat app/server/version.txt) # or use the version you want
 git checkout server/v$VERSION
 cd sophon/app
@@ -117,7 +117,7 @@ docker pull sophonai/sophon-server:latest
 You can also run the server from source:
 
 ```bash
-git clone https://github.com/sophon-ai/sophon.git
+git clone https://github.com/plandex-ai/sophon.git
 cd sophon/
 VERSION=$(cat app/server/version.txt) # or use the version you want
 git checkout server/v$VERSION

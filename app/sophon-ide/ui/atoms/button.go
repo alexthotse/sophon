@@ -27,12 +27,23 @@ import (
 )
 
 func (b SophonButton) Layout(gtx layout.Context) layout.Dimensions {
+	// Simple tooltip logic: if the button is hovered, we render a label on top.
+	// In Gio, we would typically use a dedicated tooltip widget.
 	return layout.Stack{}.Layout(gtx,
 		layout.Expanded(func(gtx layout.Context) layout.Dimensions {
 			return semantic.Description(b.SophonLabel).Layout(gtx)
 		}),
 		layout.Stacked(func(gtx layout.Context) layout.Dimensions {
 			return b.ButtonStyle.Layout(gtx)
+		}),
+		layout.Expanded(func(gtx layout.Context) layout.Dimensions {
+			if gtx.Source.Focused(b.Button) {
+				// Simple mock of a visible tooltip
+				return layout.Center.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
+					return material.Caption(b.ButtonStyle.Theme, b.Tooltip).Layout(gtx)
+				})
+			}
+			return layout.Dimensions{}
 		}),
 	)
 }

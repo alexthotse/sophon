@@ -8,7 +8,7 @@ import (
 	"sophon-cli/term"
 	"sort"
 
-	"github.com/sophon-ai/survey/v2"
+	"github.com/plandex-ai/survey/v2"
 	"github.com/spf13/cobra"
 )
 
