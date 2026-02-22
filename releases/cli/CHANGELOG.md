@@ -9,7 +9,7 @@ Assuming you're using Anthropic models (which the default model pack does), you'
 
 ## 🐞  Bug fixes
 
-Fixed an [issue](https://github.com/sophon-ai/sophon/issues/291) with custom models and providers.
+Fixed an [issue](https://github.com/plandex-ai/sophon/issues/291) with custom models and providers.
 
 ## CLI Version 2.2.0
 This is a big release that is mainly focused on Sophon's model provider and model config system. It significantly increases model provider flexibility, makes custom model configuration much easier, reduces costs on Cloud, and adds built-in support for Ollama.
@@ -30,7 +30,7 @@ This is a big release that is mainly focused on Sophon's model provider and mode
 
 - See the new [model provider docs](https://docs.sophon.ai/models/model-providers) for more details.
 
-![sophon-model-providers](https://github.com/sophon-ai/sophon/blob/main/releases/images/cli/2.2.0/new-providers.gif)
+![sophon-model-providers](https://github.com/plandex-ai/sophon/blob/main/releases/images/cli/2.2.0/new-providers.gif)
 
 ## 🛟  Provider fallback
 
@@ -56,7 +56,7 @@ This is a big release that is mainly focused on Sophon's model provider and mode
 
 - `set-model default` works the same way, but allows you to configure the default model settings for new plans.
 
-![sophon-model-settings-json](https://github.com/sophon-ai/sophon/blob/main/releases/images/cli/2.2.0/model-settings-json.gif)
+![sophon-model-settings-json](https://github.com/plandex-ai/sophon/blob/main/releases/images/cli/2.2.0/model-settings-json.gif)
 
 
 ### `models custom` command
@@ -65,7 +65,7 @@ This is a big release that is mainly focused on Sophon's model provider and mode
 
 - The first time you run it, if you haven't already configured any custom models or model packs, an example config file will be created to get you started. If you *do* already have custom models or model packs configured, the config file will be populated with those models and model packs.
 
-![sophon-custom-models-json](https://github.com/sophon-ai/sophon/blob/main/releases/images/cli/2.2.0/custom-models-json.gif)
+![sophon-custom-models-json](https://github.com/plandex-ai/sophon/blob/main/releases/images/cli/2.2.0/custom-models-json.gif)
 
 ### `models` and `models default` commands
 
@@ -77,7 +77,7 @@ This is a big release that is mainly focused on Sophon's model provider and mode
 
 - Sophon now offers built-in support for Ollama, which makes it much easier to use local models. Check out the new [Ollama quickstart](https://docs.sophon.ai/models/ollama) for details.
 
-![sophon-ollama](https://github.com/sophon-ai/sophon/blob/main/releases/images/cli/2.2.0/ollama.gif)
+![sophon-ollama](https://github.com/plandex-ai/sophon/blob/main/releases/images/cli/2.2.0/ollama.gif)
 
 ## 📖  Built-in models and models packs
 
@@ -109,7 +109,7 @@ This is a big release that is mainly focused on Sophon's model provider and mode
 
 ## 🐞  Bug fixes
 
-- Fixed a file mapping bug for TypeScript files that caused directly exported symbols like `export const foo = 'bar'` to be omitted from map files. Also improved TypeScript mapping support for some other constructs like `declare global`, `namespace`, and `enum` blocks, and improved handling of arrow functions. Thanks to @mnahkies for the [PR](https://github.com/sophon-ai/sophon/pull/239) identifying this.
+- Fixed a file mapping bug for TypeScript files that caused directly exported symbols like `export const foo = 'bar'` to be omitted from map files. Also improved TypeScript mapping support for some other constructs like `declare global`, `namespace`, and `enum` blocks, and improved handling of arrow functions. Thanks to @mnahkies for the [PR](https://github.com/plandex-ai/sophon/pull/239) identifying this.
 
 ## 🔧  Other changes
 
@@ -186,7 +186,7 @@ This is a big release that is mainly focused on Sophon's model provider and mode
 
 - In order to better incorporate newly released models and preview models that may have initial reliability or capacity issues, a more robust fallback and retry system has been implemented. This will allow for faster introduction of new models in the future while still maintaining a high level of reliability.
 
-- Fallbacks for 'context length exceeded' errors have also been improved, so that these errors will now trigger an automatic fallback to a model with a larger context limit if one is defined in the model pack. This will fix issues like https://github.com/sophon-ai/sophon/issues/232 where the stream errors with a 400 or 413 error when context is exceeded instead of falling back correctly.
+- Fallbacks for 'context length exceeded' errors have also been improved, so that these errors will now trigger an automatic fallback to a model with a larger context limit if one is defined in the model pack. This will fix issues like https://github.com/plandex-ai/sophon/issues/232 where the stream errors with a 400 or 413 error when context is exceeded instead of falling back correctly.
 
 ## 💰  Gemini Caching
 
@@ -212,9 +212,9 @@ This is a big release that is mainly focused on Sophon's model provider and mode
 
 - Fix for 'Plan replacement failed' error during file edits on Windows that was caused by mismatched line endings.
 
-- Fix for 'tool calls not supported' error for custom models that use the XML output format (https://github.com/sophon-ai/sophon/issues/238).
+- Fix for 'tool calls not supported' error for custom models that use the XML output format (https://github.com/plandex-ai/sophon/issues/238).
 
-- Fix for errors in some roles with Anthropic models when only a single system message was sent (https://github.com/sophon-ai/sophon/issues/208).
+- Fix for errors in some roles with Anthropic models when only a single system message was sent (https://github.com/plandex-ai/sophon/issues/208).
 
 - Fix for potential back-pressure issue with large/concurrent project map operations.
 
@@ -271,8 +271,8 @@ This is a big release that is mainly focused on Sophon's model provider and mode
 - Fixed bug where build output would jump between collapsed and expanded states during a stream, after the user manually expanded.
 
 ## CLI Version 2.0.1
-- Fix for REPL startup failing when self-hosting or using BYOK cloud mode (https://github.com/sophon-ai/sophon/issues/216)
-- Fix for potential crash with custom model pack (https://github.com/sophon-ai/sophon/issues/217)
+- Fix for REPL startup failing when self-hosting or using BYOK cloud mode (https://github.com/plandex-ai/sophon/issues/216)
+- Fix for potential crash with custom model pack (https://github.com/plandex-ai/sophon/issues/217)
 
 ## CLI Version 2.0.0
 👋 Hi, Dane here. I'm the creator and lead developer of Sophon.
@@ -302,7 +302,7 @@ Sophon can:
 
 Adding these capabilities together, Sophon can handle complex tasks that span entire large features or entire projects, generating 50-100 files or more in a single run.
 
-Below is a more detailed look at what's new. You can also check out the updated [README](https://github.com/sophon-ai/sophon/blob/main/README.md), [website](https://sophon.ai), and [docs](https://docs.sophon.ai).
+Below is a more detailed look at what's new. You can also check out the updated [README](https://github.com/plandex-ai/sophon/blob/main/README.md), [website](https://sophon.ai), and [docs](https://docs.sophon.ai).
 
 ## 🧠  Newer, Smarter Models
 
@@ -386,7 +386,7 @@ Go to the [quickstart](https://docs.sophon.ai/quickstart) to get started with v2
 
 - Jump into the [Sophon Discord](https://discord.gg/sophon-ai) if you have questions or feedback, or just want to hang out.
 
-- You can [post an issue on GitHub](https://github.com/sophon-ai/sophon/issues) or [start a discussion](https://github.com/sophon-ai/sophon/discussions).
+- You can [post an issue on GitHub](https://github.com/plandex-ai/sophon/issues) or [start a discussion](https://github.com/plandex-ai/sophon/discussions).
 
 - You can reach out by email: [support@sophon.ai](mailto:support@sophon.ai).
 
@@ -408,7 +408,7 @@ You can now easily use Claude 3.5 Sonnet with Sophon through OpenRouter.ai.
 3. Run `export OPENROUTER_API_KEY=...` in your terminal.
 4. Run `sophon set-model`, select `choose a model pack to change all roles at once` and then choose either `anthropic-claude-3.5-sonnet` (which uses Claude 3.5 Sonnet for all heavy lifting and Claude 3 Haiku for lighter tasks) or `anthropic-claude-3.5-sonnet-gpt-4o` (which uses Claude 3.5 Sonnet for planning and summarization, gpt-4o for builds, and gpt-3.5-turbo for lighter tasks)
 
-[sophon-claude-3.5-sonnet](https://github.com/sophon-ai/sophon/blob/main/releases/images/cli/1.1.1/clause-3-5-sonnet.gif)
+[sophon-claude-3.5-sonnet](https://github.com/plandex-ai/sophon/blob/main/releases/images/cli/1.1.1/clause-3-5-sonnet.gif)
 
 Remember, you can run `sophon model-packs` for details on all built-in model packs.
 
@@ -417,7 +417,7 @@ Remember, you can run `sophon model-packs` for details on all built-in model pac
 
 - You can now load images into context with `sophon load path/to/image.png`. Supported image formats are png, jpeg, non-animated gif, and webp. So far, this feature is only available with the default OpenAI GPT-4o model.
 
-![sophon-load-images](https://github.com/sophon-ai/sophon/blob/main/releases/images/cli/1.1.0/sophon-images.gif)
+![sophon-load-images](https://github.com/plandex-ai/sophon/blob/main/releases/images/cli/1.1.0/sophon-images.gif)
 
 ## No more hard OpenAI requirement for builder, verifier, and auto-fix roles 🧠
 
@@ -429,7 +429,7 @@ Remember, you can run `sophon model-packs` for details on all built-in model pac
 
 - You can now reject pending changes to one or more files with the `sophon reject` command. Running it with no arguments will reject all pending changes after confirmation. You can also reject changes to specific files by passing one or more file paths as arguments.
 
-![sophon-reject](https://github.com/sophon-ai/sophon/blob/main/releases/images/cli/1.1.0/sophon-reject.gif)
+![sophon-reject](https://github.com/plandex-ai/sophon/blob/main/releases/images/cli/1.1.0/sophon-reject.gif)
 
 ## Summarization and auto-continue fixes 🛤 ️
 
@@ -475,13 +475,13 @@ Remember, you can run `sophon model-packs` for details on all built-in model pac
 
 ## Version 1.0.0
 - CLI updates for the 1.0.0 release
-- See the [server/v1.0.0 release notes](https://github.com/sophon-ai/sophon/releases/tag/server%2Fv1.0.0) for full details
+- See the [server/v1.0.0 release notes](https://github.com/plandex-ai/sophon/releases/tag/server%2Fv1.0.0) for full details
 
 ## Version 0.9.1
-- Fix for occasional stream TUI panic during builds with long file paths (https://github.com/sophon-ai/sophon/issues/105)
-- If auto-upgrade fails due to a permissions issue, suggest re-running command with `sudo` (https://github.com/sophon-ai/sophon/issues/97 - thanks @kalil0321!)
-- Include 'openrouter' in list of model providers when adding a custom model (https://github.com/sophon-ai/sophon/issues/107)
-- Make terminal prompts that shouldn't be optional (like the Base URL for a custom model) required across the board (https://github.com/sophon-ai/sophon/issues/108)
+- Fix for occasional stream TUI panic during builds with long file paths (https://github.com/plandex-ai/sophon/issues/105)
+- If auto-upgrade fails due to a permissions issue, suggest re-running command with `sudo` (https://github.com/plandex-ai/sophon/issues/97 - thanks @kalil0321!)
+- Include 'openrouter' in list of model providers when adding a custom model (https://github.com/plandex-ai/sophon/issues/107)
+- Make terminal prompts that shouldn't be optional (like the Base URL for a custom model) required across the board (https://github.com/plandex-ai/sophon/issues/108)
 - Data that is piped into `sophon load` is now automatically given a name in `context ls` via a call to the `namer` role model (previously it had no name, making multiple pipes hard to disambiguate).
 - Still show the '(r)eject file' hotkey in the `sophon changes` TUI when the current file isn't scrollable.
 
@@ -496,13 +496,13 @@ Remember, you can run `sophon model-packs` for details on all built-in model pac
 
 ## 'sophon diff' command ⚖️
 
-![sophon-diff](https://github.com/sophon-ai/sophon/blob/03263a83d76785846fd472693aed03d36a68b86c/releases/images/cli/0.9.0/sophon-diff.gif)
+![sophon-diff](https://github.com/plandex-ai/sophon/blob/03263a83d76785846fd472693aed03d36a68b86c/releases/images/cli/0.9.0/sophon-diff.gif)
 
 - New `sophon diff` command shows pending plan changes in `git diff` format.
 
 ## Plans can be archived 🗄️
 
-![sophon-archive](https://github.com/sophon-ai/sophon/blob/03263a83d76785846fd472693aed03d36a68b86c/releases/images/cli/0.9.0/sophon-archive.gif)
+![sophon-archive](https://github.com/plandex-ai/sophon/blob/03263a83d76785846fd472693aed03d36a68b86c/releases/images/cli/0.9.0/sophon-archive.gif)
 
 - If you aren't using a plan anymore, but you don't want to delete it, you can now archive it.
 - Use `sophon archive` (or `sophon arc` for short) to archive a plan.
@@ -512,7 +512,7 @@ Remember, you can run `sophon model-packs` for details on all built-in model pac
 ## Custom models!! 🧠
 ### Use Sophon with models from OpenRouter, Together.ai, and more
 
-![sophon-models](https://github.com/sophon-ai/sophon/blob/03263a83d76785846fd472693aed03d36a68b86c/releases/images/cli/0.9.0/sophon-models.gif)
+![sophon-models](https://github.com/plandex-ai/sophon/blob/03263a83d76785846fd472693aed03d36a68b86c/releases/images/cli/0.9.0/sophon-models.gif)
 
 - Use `sophon models add` to add a custom model and use any provider that is compatible with OpenAI, including OpenRouter.ai, Together.ai, Ollama, Replicate, and more.
 - Anthropic Claude models are available via OpenRouter.ai. Google Gemini 1.5 preview is also available on OpenRouter.ai but was flakey in initial testing. Tons of open source models are available on both OpenRouter.ai and Together.ai, among other providers.
@@ -521,7 +521,7 @@ Remember, you can run `sophon model-packs` for details on all built-in model pac
 - The roles a custom model can be used for depend on its OpenAI compatibility.
 - Each model provider has an `ApiKeyEnvVar` associated with it, like `OPENROUTER_API_KEY`, `TOGETHER_API_KEY`, etc. You will need to have the appropriate environment variables set with a valid api key for each provider that you're using.
 - Because all of Sophon's prompts have been tested against OpenAI models, support for new models should be considered **experimental**.
-- If you find prompting patterns that are effective for certain models, please share them on Discord (https://discord.gg/sophon-ai) or GitHub (https://github.com/sophon-ai/sophon/discussions) and they may be included in future releases.
+- If you find prompting patterns that are effective for certain models, please share them on Discord (https://discord.gg/sophon-ai) or GitHub (https://github.com/plandex-ai/sophon/discussions) and they may be included in future releases.
 
 ## Model packs 🎛️
 - Instead of changing models for each role one by one, a model packs let you switch out all roles at once.
@@ -541,12 +541,12 @@ Remember, you can run `sophon model-packs` for details on all built-in model pac
 ## Quality of life improvements 🧘‍♀️
 - Descriptive top-line for `sophon apply` commit messages instead of just "applied pending changes".
 
-![sophon-commit](https://github.com/sophon-ai/sophon/blob/03263a83d76785846fd472693aed03d36a68b86c/releases/images/cli/0.9.0/sophon-commit.png)
+![sophon-commit](https://github.com/plandex-ai/sophon/blob/03263a83d76785846fd472693aed03d36a68b86c/releases/images/cli/0.9.0/sophon-commit.png)
 
 - Better message in `sophon log` when a single piece of context is loaded or updated.
 - Abbreviate really long file paths in `sophon ls`.
 - Changed `OPENAI_ENDPOINT` env var to `OPENAI_API_BASE`, which is more standardized. OPENAI_ENDPOINT is still quietly supported.
-- guides/ENV_VARS.md now lists environment variables you can use with Sophon (and a few convenience varaiables have been addded) - thanks @knno! → https://github.com/sophon-ai/sophon/pull/94
+- guides/ENV_VARS.md now lists environment variables you can use with Sophon (and a few convenience varaiables have been addded) - thanks @knno! → https://github.com/plandex-ai/sophon/pull/94
 
 ## Bug fixes 🐞
 - Fix for potential crash in `sophon changes` TUI.
@@ -555,20 +555,20 @@ Remember, you can run `sophon model-packs` for details on all built-in model pac
 ## Version 0.8.3
 - Add support for new OpenAI models: `gpt-4-turbo` and `gpt-4-turbo-2024-04-09`
 - Make `gpt-4-turbo` model the new default model for the planner, builder, and auto-continue roles -- in testing it seems to be better at reasoning and significantly less lazy than the previous default for these roles, `gpt-4-turbo-preview` -- any plan that has not previously had its model settings modified will now use `gpt-4-turbo` by default (those that have been modified will need to be updated manually) -- remember that you can always use `sophon set-model` to change models for your plans
-- Fix for `set-model` command argument parsing (https://github.com/sophon-ai/sophon/issues/75)
-- Fix for panic during plan stream when a file name's length exceeds the terminal width (https://github.com/sophon-ai/sophon/issues/84)
-- Fix for handling files that are loaded into context and later deleted from the file system (https://github.com/sophon-ai/sophon/issues/47)
-- Fix to prevent loading of duplicate files, directory trees, or urls into context (https://github.com/sophon-ai/sophon/issues/57)
+- Fix for `set-model` command argument parsing (https://github.com/plandex-ai/sophon/issues/75)
+- Fix for panic during plan stream when a file name's length exceeds the terminal width (https://github.com/plandex-ai/sophon/issues/84)
+- Fix for handling files that are loaded into context and later deleted from the file system (https://github.com/plandex-ai/sophon/issues/47)
+- Fix to prevent loading of duplicate files, directory trees, or urls into context (https://github.com/plandex-ai/sophon/issues/57)
 
 ## Version 0.8.2
-- Fix root level --help/-h to use custom help command rather than cobra's help message (re: https://github.com/sophon-ai/sophon/issues/25)
-- Include 'survey' fork (https://github.com/sophon-ai/survey) as a proper module instead of a local reference (https://github.com/sophon-ai/sophon/pull/37)
-- Add support for OPENAI_ENDPOINT environment variable for custom OpenAI endpoints (https://github.com/sophon-ai/sophon/pull/46)
+- Fix root level --help/-h to use custom help command rather than cobra's help message (re: https://github.com/plandex-ai/sophon/issues/25)
+- Include 'survey' fork (https://github.com/plandex-ai/survey) as a proper module instead of a local reference (https://github.com/plandex-ai/sophon/pull/37)
+- Add support for OPENAI_ENDPOINT environment variable for custom OpenAI endpoints (https://github.com/plandex-ai/sophon/pull/46)
 - Add support for OPENAI_ORG_ID environment variable for setting the OpenAI organization ID when using an API key with multiple OpenAI organizations.
 
 ## Version 0.8.1
-- Fix for missing 'host' key when creating an account or signing in to a self-hosted server (https://github.com/sophon-ai/sophon/issues/11)
-- `add` alias for `load` command + `unload` alias for `rm` command (https://github.com/sophon-ai/sophon/issues/12)
+- Fix for missing 'host' key when creating an account or signing in to a self-hosted server (https://github.com/plandex-ai/sophon/issues/11)
+- `add` alias for `load` command + `unload` alias for `rm` command (https://github.com/plandex-ai/sophon/issues/12)
 - Add `invite`, `revoke`, and `users` commands to `sophon help` output
 - A bit of cleanup of extraneous logging
 

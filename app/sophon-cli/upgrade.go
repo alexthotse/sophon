@@ -100,7 +100,7 @@ func doUpgrade(version string) error {
 	tag := fmt.Sprintf("cli/v%s", version)
 	escapedTag := url.QueryEscape(tag)
 
-	downloadURL := fmt.Sprintf("https://github.com/sophon-ai/sophon/releases/download/%s/sophon_%s_%s_%s.tar.gz", escapedTag, version, runtime.GOOS, runtime.GOARCH)
+	downloadURL := fmt.Sprintf("https://github.com/plandex-ai/sophon/releases/download/%s/sophon_%s_%s_%s.tar.gz", escapedTag, version, runtime.GOOS, runtime.GOARCH)
 	resp, err := http.Get(downloadURL)
 	if err != nil {
 		return fmt.Errorf("failed to download the update: %w", err)

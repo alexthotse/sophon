@@ -30,10 +30,20 @@ func init() {
 	}
 	HomeDir = home
 
+	var oldHomeSophonDir string
 	if os.Getenv("PLANDEX_ENV") == "development" {
 		HomeSophonDir = filepath.Join(home, ".sophon-home-dev-v2")
+		oldHomeSophonDir = filepath.Join(home, ".plandex-home-dev-v2")
 	} else {
 		HomeSophonDir = filepath.Join(home, ".sophon-home-v2")
+		oldHomeSophonDir = filepath.Join(home, ".plandex-home-v2")
+	}
+
+	// Migration logic: if old home dir exists and new one doesn't, rename it.
+	if _, err := os.Stat(oldHomeSophonDir); err == nil {
+		if _, err := os.Stat(HomeSophonDir); os.IsNotExist(err) {
+			os.Rename(oldHomeSophonDir, HomeSophonDir)
+		}
 	}
 
 	// Create the home sophon directory if it doesn't exist
@@ -119,11 +129,22 @@ func FindSophonDir() {
 
 func findSophon(baseDir string) string {
 	var dir string
+	var oldDir string
 	if os.Getenv("PLANDEX_ENV") == "development" {
 		dir = filepath.Join(baseDir, ".sophon-dev-v2")
+		oldDir = filepath.Join(baseDir, ".plandex-dev-v2")
 	} else {
 		dir = filepath.Join(baseDir, ".sophon-v2")
+		oldDir = filepath.Join(baseDir, ".plandex-v2")
 	}
+
+	// Migration logic: if old dir exists and new one doesn't, rename it.
+	if _, err := os.Stat(oldDir); err == nil {
+		if _, err := os.Stat(dir); os.IsNotExist(err) {
+			os.Rename(oldDir, dir)
+		}
+	}
+
 	if _, err := os.Stat(dir); !os.IsNotExist(err) {
 		return dir
 	}

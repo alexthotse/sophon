@@ -107,4 +107,4 @@ When configuring a custom model pack to use Ollama, set the top-level `localProv
 
 ## Contributors
 
-If you experiment with Sophon and Ollama and you find model combinations that work better than the built-in model packs, please chime in on [Discord](https://discord.gg/sophon-ai) or [open a PR](https://github.com/sophon-ai/sophon/pulls). The world of local models moves fast, and we can't always keep up with the cutting edge ourselves, so it would be great to have community help on filling in the gaps. With your help, we'd love to get to a place where Sophon can work effectively with 100% local models.
+If you experiment with Sophon and Ollama and you find model combinations that work better than the built-in model packs, please chime in on [Discord](https://discord.gg/sophon-ai) or [open a PR](https://github.com/plandex-ai/sophon/pulls). The world of local models moves fast, and we can't always keep up with the cutting edge ourselves, so it would be great to have community help on filling in the gaps. With your help, we'd love to get to a place where Sophon can work effectively with 100% local models.
