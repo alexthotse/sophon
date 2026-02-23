@@ -5,7 +5,7 @@ import (
 	"runtime/debug"
 )
 
-// this allows Sophon Cloud to inject error monitoring
+// this allows Sophon to inject error monitoring
 // all non-streaming handlers are already wrapped with different logic, so this is only needed for errors in streaming handlers
 
 type Severity int

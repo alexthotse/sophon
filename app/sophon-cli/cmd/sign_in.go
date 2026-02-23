@@ -11,7 +11,7 @@ var pin string
 
 var signInCmd = &cobra.Command{
 	Use:   "sign-in",
-	Short: "Sign in to a Sophon account",
+	Short: "Sign in to a Sophon server",
 	Args:  cobra.NoArgs,
 	Run:   signIn,
 }
@@ -19,7 +19,7 @@ var signInCmd = &cobra.Command{
 func init() {
 	RootCmd.AddCommand(signInCmd)
 
-	signInCmd.Flags().StringVar(&pin, "pin", "", "Sign in with a pin from the Sophon Cloud web UI")
+	signInCmd.Flags().StringVar(&pin, "pin", "", "Sign in with a pin from the Sophon web UI")
 }
 
 func signIn(cmd *cobra.Command, args []string) {

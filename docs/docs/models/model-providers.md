@@ -5,9 +5,9 @@ sidebar_label: Providers
 
 # Model Providers
 
-If you use [Sophon Cloud](../hosting/cloud.md) in **Integrated Models Mode**, you can use Sophon credits to pay for AI models. No separate accounts or API keys are required in this case.
+If you use [Sophon](../hosting/cloud.md) in **Integrated Models Mode**, you can use Sophon credits to pay for AI models. No separate accounts or API keys are required in this case.
 
-If you instead use **BYO API Key Mode** with Sophon Cloud, or if you self-host Sophon, you'll need to set API keys (or other credentials) for the providers you want to use.
+If you instead use **BYO API Key Mode** with Sophon, or if you self-host Sophon, you'll need to set API keys (or other credentials) for the providers you want to use.
 
 To see available providers, run:
 
@@ -42,7 +42,7 @@ If you have a Claude Pro or Max subscription, Sophon can use it when calling Ant
 
 ### OpenRouter
 
-Apart from Sophon Cloud's Integrated Models Mode, the quickest way to get started is to use [OpenRouter.ai](https://openrouter.ai/), which allows you to use a wide range of models—including all those Sophon uses by default—with a single account and API key.
+Apart from Sophon's Integrated Models Mode, the quickest way to get started is to use [OpenRouter.ai](https://openrouter.ai/), which allows you to use a wide range of models—including all those Sophon uses by default—with a single account and API key.
 
 To use OpenRouter, you'll need to create an account and generate an API key, then set the `OPENROUTER_API_KEY` environment variable.
 

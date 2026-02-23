@@ -117,8 +117,8 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pkg/term v1.2.0-beta.2 // indirect
 	github.com/pkoukk/tiktoken-go v0.1.7 // indirect
-	github.com/plandex-ai/go-prompt v0.0.0-20250304173555-1f364907fc6c // indirect
-	github.com/plandex-ai/survey/v2 v2.3.7 // indirect
+	github.com/sophon.ai/go-prompt v0.0.0-20250304173555-1f364907fc6c // indirect
+	github.com/sophon.ai/survey/v2 v2.3.7 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/sabhiram/go-gitignore v0.0.0-20210923224102-525f6e181f06 // indirect
 	github.com/sahilm/fuzzy v0.1.1 // indirect

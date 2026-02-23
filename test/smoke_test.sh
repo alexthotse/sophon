@@ -1,7 +1,7 @@
 #!/bin/bash
 # Sophon Smoke Test Script
 # Tests core functionality in a linear flow mimicking real usage
-# Assumes: Already signed in to Sophon Cloud (dev or staging account)
+# Assumes: Already signed in to Sophon (dev or staging account)
 
 set -e  # Exit on error
 

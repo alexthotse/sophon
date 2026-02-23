@@ -5,7 +5,7 @@ sidebar_label: Claude Pro/Max
 
 # Claude Pro/Max Subscription
 
-If you have a Claude Pro or Max subscription, Sophon can use it when calling Anthropic models. You can use it in either Integrated Models Mode on Sophon Cloud, or in BYO Key Mode (whether on Cloud or self-hosting).
+If you have a Claude Pro or Max subscription, Sophon can use it when calling Anthropic models. You can use it in either Integrated Models Mode on Sophon, or in BYO Key Mode (whether on Cloud or self-hosting).
 
 ## Startup Prompt
 
@@ -44,9 +44,9 @@ This command will also tell you if the subscription's quota has been exceeded an
 
 ## Quota Exhaustion
 
-If you're using Sophon Cloud with Integrated Models Mode, Anthropic model calls will use your Claude subscription until it runs out of quota, then switch to using Sophon credits until the quota resets.
+If you're using Sophon with Integrated Models Mode, Anthropic model calls will use your Claude subscription until it runs out of quota, then switch to using Sophon credits until the quota resets.
 
-If you're self-hosting or using Sophon Cloud in BYO API Key Mode, Anthropic model calls will use your Claude subscription until it runs out of quota, then:
+If you're self-hosting or using Sophon in BYO API Key Mode, Anthropic model calls will use your Claude subscription until it runs out of quota, then:
 
 - If you have an API key or credentials set for an [Anthropic provider](./model-providers.md) (like the Anthropic API, Google Vertex AI, AWS Bedrock, or OpenRouter), Sophon will switch to the backup provider until the quota resets.
 

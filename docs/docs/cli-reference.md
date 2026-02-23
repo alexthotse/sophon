@@ -728,10 +728,10 @@ Show all available model providers.
 
 ```bash
 sophon providers
-sophon providers --custom # show custom providers only (not supported on Sophon Cloud)
+sophon providers --custom # show custom providers only (not supported on Sophon)
 ```
 
-`--custom/-c`: Show custom providers only (not supported on Sophon Cloud).
+`--custom/-c`: Show custom providers only (not supported on Sophon).
 
 ### set-model
 
@@ -817,9 +817,9 @@ Sign in, accept an invite, or create an account.
 sophon sign-in
 ```
 
-`--pin`: Sign in with a pin from the Sophon Cloud web UI.
+`--pin`: Sign in with a pin from the Sophon web UI.
 
-Unless you pass `--pin` (from the Sophon Cloud web UI), Sophon will prompt you for all required information to sign in, accept an invite, or create an account.
+Unless you pass `--pin` (from the Sophon web UI), Sophon will prompt you for all required information to sign in, accept an invite, or create an account.
 
 ### invite
 
@@ -875,7 +875,7 @@ sophon claude-status
 
 Shows whether a Claude Pro or Max subscription is connected, and whether the quota has been exceeded.
 
-## Sophon Cloud
+## Sophon
 
 ### billing
 
@@ -887,7 +887,7 @@ sophon billing
 
 ### usage
 
-Show Sophon Cloud current balance and usage report. Includes recent spend, amount saved by input caching, a breakdown of spend by plan, category, and model, and a log of individual transactions with the `--log` flag.
+Show Sophon current balance and usage report. Includes recent spend, amount saved by input caching, a breakdown of spend by plan, category, and model, and a log of individual transactions with the `--log` flag.
 
 Defaults to showing usage for the current session if you're using the REPL. Otherwise, defaults to showing usage for the day so far.
 

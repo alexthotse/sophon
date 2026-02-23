@@ -37,7 +37,7 @@ func UpsertCustomModelsHandler(w http.ResponseWriter, r *http.Request) {
 
 	if len(modelsInput.CustomProviders) > 0 {
 		if os.Getenv("IS_CLOUD") != "" {
-			http.Error(w, "Custom model providers are not supported on Sophon Cloud", http.StatusBadRequest)
+			http.Error(w, "Custom model providers are not supported on Sophon", http.StatusBadRequest)
 			return
 		}
 	}
@@ -52,7 +52,7 @@ func UpsertCustomModelsHandler(w http.ResponseWriter, r *http.Request) {
 			}
 
 			if apiOrg.IntegratedModelsMode {
-				http.Error(w, "Custom models are not supported on Sophon Cloud in Integrated Models mode", http.StatusBadRequest)
+				http.Error(w, "Custom models are not supported on Sophon in Integrated Models mode", http.StatusBadRequest)
 				return
 			}
 		}
@@ -211,7 +211,7 @@ func UpsertCustomModelsHandler(w http.ResponseWriter, r *http.Request) {
 					return
 				}
 				if os.Getenv("IS_CLOUD") != "" && pc.LocalOnly {
-					msg := fmt.Sprintf("'%s' is a local-only model provider, so it can't be used on Sophon Cloud", provider.Provider)
+					msg := fmt.Sprintf("'%s' is a local-only model provider, so it can't be used on Sophon", provider.Provider)
 					log.Println(msg)
 					http.Error(w, msg, http.StatusUnprocessableEntity)
 					return
@@ -243,7 +243,7 @@ func UpsertCustomModelsHandler(w http.ResponseWriter, r *http.Request) {
 			}
 
 			if builtIn && os.Getenv("IS_CLOUD") != "" && bm.IsLocalOnly() {
-				msg := fmt.Sprintf("'%s' is a local-only built-in model, so it can't be used on Sophon Cloud", modelId)
+				msg := fmt.Sprintf("'%s' is a local-only built-in model, so it can't be used on Sophon", modelId)
 				log.Println(msg)
 				http.Error(w, msg, http.StatusUnprocessableEntity)
 				return
@@ -435,7 +435,7 @@ func ListCustomProvidersHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if os.Getenv("IS_CLOUD") != "" {
-		http.Error(w, "Custom model providers are not supported on Sophon Cloud", http.StatusBadRequest)
+		http.Error(w, "Custom model providers are not supported on Sophon", http.StatusBadRequest)
 		return
 	}
 

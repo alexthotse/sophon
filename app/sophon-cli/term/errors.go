@@ -121,7 +121,7 @@ func HandleApiError(apiError *shared.ApiError) {
 	if apiError.Type == shared.ApiErrorTypeCloudSubscriptionPaused {
 		if apiError.BillingError.HasBillingPermission {
 			StopSpinner()
-			fmt.Println("Your org's Sophon Cloud subscription is paused.")
+			fmt.Println("Your org's Sophon subscription is paused.")
 			res, err := ConfirmYesNo("Go to billing settings?")
 			if err != nil {
 				OutputErrorAndExit("error getting confirmation")
@@ -140,7 +140,7 @@ func HandleApiError(apiError *shared.ApiError) {
 	if apiError.Type == shared.ApiErrorTypeCloudSubscriptionOverdue {
 		if apiError.BillingError.HasBillingPermission {
 			StopSpinner()
-			OutputSimpleError("Your org's Sophon Cloud subscription is overdue.")
+			OutputSimpleError("Your org's Sophon subscription is overdue.")
 			res, err := ConfirmYesNo("Go to billing settings?")
 			if err != nil {
 				OutputErrorAndExit("error getting confirmation")
@@ -159,7 +159,7 @@ func HandleApiError(apiError *shared.ApiError) {
 	if apiError.Type == shared.ApiErrorTypeCloudMonthlyMaxReached {
 		if apiError.BillingError.HasBillingPermission {
 			StopSpinner()
-			OutputSimpleError("Your org has reached its monthly limit for Sophon Cloud.")
+			OutputSimpleError("Your org has reached its monthly limit for Sophon.")
 			res, err := ConfirmYesNo("Go to billing settings?")
 			if err != nil {
 				OutputErrorAndExit("error getting confirmation")
@@ -171,7 +171,7 @@ func HandleApiError(apiError *shared.ApiError) {
 				os.Exit(0)
 			}
 		} else {
-			OutputErrorAndExit("Your org has reached its monthly limit for Sophon Cloud.")
+			OutputErrorAndExit("Your org has reached its monthly limit for Sophon.")
 		}
 	}
 
@@ -196,7 +196,7 @@ func HandleApiError(apiError *shared.ApiError) {
 
 	if apiError.Type == shared.ApiErrorTypeTrialMessagesExceeded {
 		StopSpinner()
-		fmt.Fprintf(os.Stderr, "\n🚨 You've reached the Sophon Cloud trial limit of %d messages per plan\n", apiError.TrialMessagesExceededError.MaxReplies)
+		fmt.Fprintf(os.Stderr, "\n🚨 You've reached the Sophon trial limit of %d messages per plan\n", apiError.TrialMessagesExceededError.MaxReplies)
 
 		res, err := ConfirmYesNo("Upgrade now?")
 

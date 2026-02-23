@@ -12,7 +12,7 @@ This is an overview of all the environment variables that can be used with Sopho
 ### General
 
 ```bash
-PLANDEX_ENV=development # Set this to 'development' to default to the local development server instead of Sophon Cloud when working on Sophon itself.
+PLANDEX_ENV=development # Set this to 'development' to default to the local development server instead of Sophon when working on Sophon itself.
 PLANDEX_API_HOST= # Defaults to 'http://localhost:8099' if PLANDEX_ENV is development, otherwise it's 'https://api.sophon.ai'—override this to use a different host.
 ```
 

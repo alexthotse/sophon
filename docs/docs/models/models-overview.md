@@ -72,9 +72,9 @@ sophon set-model default # CLI
 
 Sophon offers flexibility on the providers you can use to serve models.
 
-If you use [Sophon Cloud](../hosting/cloud.md) in **Integrated Models Mode**, you can use Sophon credits to pay for AI models. In that case, you won't need to worry about providers, provider accounts, or API keys.
+If you use [Sophon](../hosting/cloud.md) in **Integrated Models Mode**, you can use Sophon credits to pay for AI models. In that case, you won't need to worry about providers, provider accounts, or API keys.
 
-If instead you use **BYO API Key Mode** with Sophon Cloud, or if you [self-host](../hosting/self-hosting/local-mode-quickstart.md) Sophon, you'll need to set API keys (or other credentials) for the providers you want to use. Multiple built-in providers are supported.
+If instead you use **BYO API Key Mode** with Sophon, or if you [self-host](../hosting/self-hosting/local-mode-quickstart.md) Sophon, you'll need to set API keys (or other credentials) for the providers you want to use. Multiple built-in providers are supported.
 
 If you're self-hosting, you can also configure custom providers—they just need to be OpenAI-compatible.
 

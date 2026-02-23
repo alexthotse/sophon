@@ -7,7 +7,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 PLATFORM=
 ARCH=
 VERSION=
-RELEASES_URL="https://github.com/plandex-ai/sophon/releases/download"
+RELEASES_URL="https://github.com/sophon.ai/sophon/releases/download"
 
  # Ensure cleanup happens on exit and on specific signals
 trap cleanup EXIT

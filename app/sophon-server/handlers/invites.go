@@ -19,15 +19,6 @@ import (
 func InviteUserHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Received a request for InviteUserHandler")
 
-	if os.Getenv("GOENV") == "development" && os.Getenv("LOCAL_MODE") == "1" {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeOther,
-			Status: http.StatusForbidden,
-			Msg:    "Local mode is not supported for invites",
-		})
-		return
-	}
-
 	auth := Authenticate(w, r, true)
 	if auth == nil {
 		return
@@ -41,15 +32,6 @@ func InviteUserHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if org.IsTrial {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeTrialActionNotAllowed,
-			Status: http.StatusForbidden,
-			Msg:    "Trial user can't invite other users",
-		})
-
-		return
-	}
 
 	currentUserId := auth.User.Id
 
@@ -162,15 +144,6 @@ func InviteUserHandler(w http.ResponseWriter, r *http.Request) {
 func ListPendingInvitesHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Received a request for ListInvitesHandler")
 
-	if os.Getenv("GOENV") == "development" && os.Getenv("LOCAL_MODE") == "1" {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeOther,
-			Status: http.StatusForbidden,
-			Msg:    "Local mode is not supported for invites",
-		})
-		return
-	}
-
 	auth := Authenticate(w, r, true)
 	if auth == nil {
 		return
@@ -183,14 +156,6 @@ func ListPendingInvitesHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if org.IsTrial {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeTrialActionNotAllowed,
-			Status: http.StatusForbidden,
-			Msg:    "Trial user can't list invites",
-		})
-		return
-	}
 
 	invites, err := db.ListPendingInvites(auth.OrgId)
 
@@ -219,15 +184,6 @@ func ListPendingInvitesHandler(w http.ResponseWriter, r *http.Request) {
 
 func ListAcceptedInvitesHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Received a request for ListAcceptedInvitesHandler")
-
-	if os.Getenv("GOENV") == "development" && os.Getenv("LOCAL_MODE") == "1" {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeOther,
-			Status: http.StatusForbidden,
-			Msg:    "Local mode is not supported for invites",
-		})
-		return
-	}
 
 	auth := Authenticate(w, r, true)
 	if auth == nil {
@@ -278,15 +234,6 @@ func ListAcceptedInvitesHandler(w http.ResponseWriter, r *http.Request) {
 func ListAllInvitesHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Received a request for ListAllInvitesHandler")
 
-	if os.Getenv("GOENV") == "development" && os.Getenv("LOCAL_MODE") == "1" {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeOther,
-			Status: http.StatusForbidden,
-			Msg:    "Local mode is not supported for invites",
-		})
-		return
-	}
-
 	auth := Authenticate(w, r, true)
 	if auth == nil {
 		return
@@ -336,15 +283,6 @@ func ListAllInvitesHandler(w http.ResponseWriter, r *http.Request) {
 func DeleteInviteHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Received a request for DeleteInviteHandler")
 
-	if os.Getenv("GOENV") == "development" && os.Getenv("LOCAL_MODE") == "1" {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeOther,
-			Status: http.StatusForbidden,
-			Msg:    "Local mode is not supported for invites",
-		})
-		return
-	}
-
 	auth := Authenticate(w, r, true)
 	if auth == nil {
 		return
@@ -357,14 +295,6 @@ func DeleteInviteHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if org.IsTrial {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeTrialActionNotAllowed,
-			Status: http.StatusForbidden,
-			Msg:    "Trial user can't delete invites",
-		})
-		return
-	}
 
 	vars := mux.Vars(r)
 	inviteId := vars["inviteId"]

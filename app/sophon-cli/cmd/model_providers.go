@@ -53,7 +53,7 @@ func listProviders(cmd *cobra.Command, args []string) {
 	var apiErr *shared.ApiError
 
 	if customProvidersOnly && auth.Current.IsCloud {
-		term.OutputErrorAndExit("Custom providers are not supported on Sophon Cloud")
+		term.OutputErrorAndExit("Custom providers are not supported on Sophon")
 		return
 	}
 

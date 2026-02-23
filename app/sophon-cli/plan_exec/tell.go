@@ -154,7 +154,7 @@ func TellPlan(
 
 		if apiErr != nil {
 			if apiErr.Type == shared.ApiErrorTypeTrialMessagesExceeded {
-				fmt.Fprintf(os.Stderr, "\n🚨 You've reached the Sophon Cloud trial limit of %d messages per plan\n", apiErr.TrialMessagesExceededError.MaxReplies)
+				fmt.Fprintf(os.Stderr, "\n🚨 You've reached the Sophon trial limit of %d messages per plan\n", apiErr.TrialMessagesExceededError.MaxReplies)
 
 				res, err := term.ConfirmYesNo("Upgrade now?")
 
@@ -205,7 +205,7 @@ func TellPlan(
 					}
 
 					if balance.LessThan(decimal.NewFromInt(CloudTrialBalanceWarningThreshold)) {
-						color.New(term.ColorHiYellow, color.Bold).Printf("\n⚠️  Your Sophon Cloud trial has $%s in credits remaining\n\n", balance.StringFixed(2))
+						color.New(term.ColorHiYellow, color.Bold).Printf("\n⚠️  Your Sophon trial has $%s in credits remaining\n\n", balance.StringFixed(2))
 
 						const continueOpt = "Continue"
 						const billingSettingsOpt = "Go to billing settings (then continue)"

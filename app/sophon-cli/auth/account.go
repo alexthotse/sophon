@@ -86,7 +86,6 @@ func SelectOrSignInOrCreate() error {
 		ClientAccount:        *selected,
 		OrgId:                org.Id,
 		OrgName:              org.Name,
-		OrgIsTrial:           org.IsTrial,
 		IntegratedModelsMode: org.IntegratedModelsMode,
 	})
 
@@ -138,37 +137,21 @@ func promptInitialAuth() error {
 }
 
 const (
-	// SignInCloudOption = "Sophon Cloud"
 	SignInLocalOption = "Local mode host"
 	SignInOtherOption = "Another host"
 )
 
 func promptSignInNewAccount() error {
-	selected, err := term.SelectFromList("Use local mode or another host?", []string{SignInLocalOption, SignInOtherOption})
-
-	if err != nil {
-		return fmt.Errorf("error selecting sign in option: %v", err)
-	}
-
 	var host string
 	var email string
+	var err error
 
-	if selected == SignInLocalOption {
-		host, err = term.GetRequiredUserStringInputWithDefault("Host:", "http://localhost:8099")
-	} else {
-		host, err = term.GetRequiredUserStringInput("Host:")
-	}
-
+	host, err = term.GetRequiredUserStringInputWithDefault("Sophon Server Host:", "http://localhost:8099")
 	if err != nil {
 		return fmt.Errorf("error prompting host: %v", err)
 	}
 
-	if selected == SignInLocalOption {
-		email = "local-admin@sophon.ai"
-	} else {
-		email, err = term.GetRequiredUserStringInput("Your email:")
-	}
-
+	email, err = term.GetRequiredUserStringInputWithDefault("Your email:", "local-admin@sophon.ai")
 	if err != nil {
 		return fmt.Errorf("error prompting email: %v", err)
 	}
@@ -260,8 +243,6 @@ func handleSignInResponse(res *shared.SessionResponse, host string) error {
 			UserId:      res.UserId,
 			UserName:    res.UserName,
 			Token:       res.Token,
-			IsTrial:     false,
-			IsCloud:     host == "",
 			Host:        host,
 			IsLocalMode: isLocalMode,
 		},
@@ -329,8 +310,6 @@ func createAccount(email, pin, host string, isLocalMode bool) error {
 			UserId:      res.UserId,
 			UserName:    res.UserName,
 			Token:       res.Token,
-			IsTrial:     false,
-			IsCloud:     host == "",
 			Host:        host,
 			IsLocalMode: isLocalMode,
 		},

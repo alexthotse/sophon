@@ -52,12 +52,7 @@ func AddHealthRoutes(r *mux.Router) {
 		currentDir := filepath.Dir(execPath)
 
 		// get version from version.txt
-		var path string
-		if os.Getenv("IS_CLOUD") != "" {
-			path = filepath.Join(currentDir, "..", "version.txt")
-		} else {
-			path = filepath.Join(currentDir, "version.txt")
-		}
+		path := filepath.Join(currentDir, "version.txt")
 
 		bytes, err := os.ReadFile(path)
 

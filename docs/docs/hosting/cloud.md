@@ -3,19 +3,19 @@ sidebar_position: 1
 sidebar_label: Cloud
 ---
 
-# Sophon Cloud
+# Sophon
 
 ## Overview
 
 :::info
-Sophon Cloud is winding down as of 10/3/2025 and is no longer accepting new users. <a href="https://sophon.ai/blog/winding-down">Learn more.</a>
+Sophon is winding down as of 10/3/2025 and is no longer accepting new users. <a href="https://sophon.ai/blog/winding-down">Learn more.</a>
 :::
 
-Sophon Cloud is the easiest and most reliable way to use Sophon. You'll be prompted to start a trial when you launch the [REPL](../repl.md) with `sophon` or create your first plan with `sophon new`.
+Sophon is the easiest and most reliable way to use Sophon. You'll be prompted to start a trial when you launch the [REPL](../repl.md) with `sophon` or create your first plan with `sophon new`.
 
 ## Billing Modes
 
-Sophon Cloud has two billing modes:
+Sophon has two billing modes:
 
 ### Integrated Models
 
@@ -78,11 +78,11 @@ sophon usage --log --purchases --today # show only purchases for the day so far
 
 ## Privacy / Data Retention
 
-Data you send to Sophon Cloud is retained in order to debug and improve Sophon. In the future, this data may also be used to train and fine-tune models to improve performance and reduce costs.
+Data you send to Sophon is retained in order to debug and improve Sophon. In the future, this data may also be used to train and fine-tune models to improve performance and reduce costs.
 
-That said, if you delete your Sophon Cloud account, all associated data will be removed within 14 days (this delay allows for debugging and backups).
+That said, if you delete your Sophon account, all associated data will be removed within 14 days (this delay allows for debugging and backups).
 
-Data sent to Sophon Cloud may be shared with the following third parties:
+Data sent to Sophon may be shared with the following third parties:
 
 - [OpenAI](https://openai.com) for OpenAI models when using Integrated Models Mode.
 - [OpenRouter.ai](https://openrouter.ai/) for Anthropic, Google, and other non-OpenAI models when using Integrated Models Mode.

@@ -55,15 +55,6 @@ func ListOrgsHandler(w http.ResponseWriter, r *http.Request) {
 func CreateOrgHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Received request for CreateOrgHandler")
 
-	if os.Getenv("IS_CLOUD") != "" {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeOther,
-			Status: http.StatusForbidden,
-			Msg:    "Sophon Cloud orgs can only be created by starting a trial",
-		})
-		return
-	}
-
 	auth := Authenticate(w, r, false)
 	if auth == nil {
 		return
