@@ -150,14 +150,6 @@ var CliCommands = []CmdConfig{
 	{"disconnect-claude", "", "disconnect your Claude Pro or Max subscription", true},
 	{"claude-status", "", "status of your Claude Pro or Max subscription connection", true},
 
-	{"usage", "", "show Sophon Cloud current balance and usage report", true},
-	{"usage --today", "", "show Sophon Cloud usage for the day so far", true},
-	{"usage --month", "", "show Sophon Cloud usage for the current billing month", true},
-	{"usage --plan", "", "show Sophon Cloud usage for the current plan", true},
-
-	{"usage --log", "", "show Sophon Cloud transaction log", true},
-
-	{"billing", "", "show Sophon Cloud billing settings", true},
 }
 
 var CmdDesc = map[string]CmdConfig{}
@@ -351,10 +343,6 @@ func PrintHelpAllCommands() {
 
 	color.New(color.Bold, color.BgCyan, color.FgHiWhite).Fprintln(builder, " Integrations ")
 	printCmds(builder, " ", []color.Attribute{color.Bold, ColorHiCyan}, "connect-claude", "disconnect-claude", "claude-status")
-	fmt.Fprintln(builder)
-
-	color.New(color.Bold, color.BgCyan, color.FgHiWhite).Fprintln(builder, " Cloud ")
-	printCmds(builder, " ", []color.Attribute{color.Bold, ColorHiCyan}, "usage", "usage --today", "usage --month", "usage --plan", "usage --log", "billing")
 	fmt.Fprintln(builder)
 
 	color.New(color.Bold, color.BgCyan, color.FgHiWhite).Fprintln(builder, " New Plan Shortcuts ")

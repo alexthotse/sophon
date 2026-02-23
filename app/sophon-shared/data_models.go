@@ -13,16 +13,13 @@ type Org struct {
 	IsTrial            bool   `json:"isTrial"`
 	AutoAddDomainUsers bool   `json:"autoAddDomainUsers"`
 
-	// optional cloud attributes
-	IntegratedModelsMode bool                `json:"integratedModelsMode,omitempty"`
-	CloudBillingFields   *CloudBillingFields `json:"cloudBillingFields,omitempty"`
+	IntegratedModelsMode bool `json:"integratedModelsMode,omitempty"`
 }
 
 type User struct {
 	Id               string `json:"id"`
 	Name             string `json:"name"`
 	Email            string `json:"email"`
-	IsTrial          bool   `json:"isTrial"`
 	NumNonDraftPlans int    `json:"numNonDraftPlans"`
 
 	DefaultPlanConfig *PlanConfig `json:"defaultPlanConfig,omitempty"`
@@ -307,94 +304,3 @@ type OrgRole struct {
 	Description string `json:"description"`
 }
 
-type CloudBillingFields struct {
-	CreditsBalance        decimal.Decimal `json:"creditsBalance"`
-	MonthlyGrant          decimal.Decimal `json:"monthlyGrant"`
-	AutoRebuyEnabled      bool            `json:"autoRebuyEnabled"`
-	AutoRebuyMinThreshold decimal.Decimal `json:"autoRebuyMinThreshold"`
-	AutoRebuyToBalance    decimal.Decimal `json:"autoRebuyToBalance"`
-	NotifyThreshold       decimal.Decimal `json:"notifyThreshold"`
-	MaxThresholdPerMonth  decimal.Decimal `json:"maxThresholdPerMonth"`
-	BillingCycleStartedAt time.Time       `json:"billingCycleStartedAt"`
-
-	ChangedBillingMode bool `json:"changedBillingMode"`
-	TrialPaid          bool `json:"trialPaid"`
-
-	StripeSubscriptionId                 *string    `json:"stripeSubscriptionId"`
-	SubscriptionStatus                   *string    `json:"subscriptionStatus"`
-	SubscriptionPausedAt                 *time.Time `json:"subscriptionPausedAt"`
-	StripePaymentMethod                  *string    `json:"stripePaymentMethod"`
-	SubscriptionActionRequired           bool       `json:"subscriptionActionRequired"` // for 3ds/sca approvals
-	SubscriptionActionRequiredInvoiceUrl *string    `json:"subscriptionActionRequiredInvoiceUrl"`
-}
-
-type CreditsTransactionType string
-
-const (
-	CreditsTransactionTypeCredit CreditsTransactionType = "credit"
-	CreditsTransactionTypeDebit  CreditsTransactionType = "debit"
-)
-
-type CreditType string
-
-const (
-	CreditTypeTrial      CreditType = "trial"
-	CreditTypeGrant      CreditType = "grant"
-	CreditTypeAdminGrant CreditType = "admin_grant"
-	CreditTypePurchase   CreditType = "purchase"
-	CreditTypeSwitch     CreditType = "switch"
-)
-
-type CreditsTransaction struct {
-	Id              string                 `json:"id"`
-	OrgId           string                 `json:"orgId"`
-	OrgName         string                 `json:"orgName"`
-	UserId          *string                `json:"userId"`
-	UserEmail       *string                `json:"userEmail"`
-	UserName        *string                `json:"userName"`
-	TransactionType CreditsTransactionType `json:"transactionType"`
-	Amount          decimal.Decimal        `json:"amount"`
-	StartBalance    decimal.Decimal        `json:"startBalance"`
-	EndBalance      decimal.Decimal        `json:"endBalance"`
-
-	CreditType                  *CreditType      `json:"creditType,omitempty"`
-	CreditIsAutoRebuy           bool             `json:"creditIsAutoRebuy"`
-	CreditAutoRebuyMinThreshold *decimal.Decimal `json:"creditAutoRebuyMinThreshold,omitempty"`
-	CreditAutoRebuyToBalance    *decimal.Decimal `json:"creditAutoRebuyToBalance,omitempty"`
-
-	DebitInputTokens              *int             `json:"debitInputTokens,omitempty"`
-	DebitOutputTokens             *int             `json:"debitOutputTokens,omitempty"`
-	DebitModelInputPricePerToken  *decimal.Decimal `json:"debitModelInputPricePerToken,omitempty"`
-	DebitModelOutputPricePerToken *decimal.Decimal `json:"debitModelOutputPricePerToken,omitempty"`
-
-	DebitBaseAmount *decimal.Decimal `json:"debitBaseAmount,omitempty"`
-	DebitSurcharge  *decimal.Decimal `json:"debitSurcharge,omitempty"`
-
-	DebitModelProvider *ModelProvider `json:"debitModelProvider,omitempty"`
-	DebitModelName     *string        `json:"debitModelName,omitempty"`
-	DebitModelPackName *string        `json:"debitModelPackName,omitempty"`
-	DebitModelRole     *ModelRole     `json:"debitModelRole,omitempty"`
-
-	DebitPurpose  *string `json:"debitPurpose,omitempty"`
-	DebitPlanId   *string `json:"debitPlanId,omitempty"`
-	DebitPlanName *string `json:"debitPlanName,omitempty"`
-	DebitId       *string `json:"debitId,omitempty"`
-
-	DebitCacheDiscount *decimal.Decimal `json:"debitCacheDiscount,omitempty"`
-
-	DebitSessionId *string `json:"debitSessionId,omitempty"`
-
-	CreatedAt time.Time `json:"createdAt"`
-}
-
-func (t *CreditsTransaction) ModelString() string {
-	s := ""
-	if t.DebitModelProvider != nil && *t.DebitModelProvider != ModelProviderOpenAI {
-		s += string(*t.DebitModelProvider) + "/"
-	}
-	if t.DebitModelName != nil {
-		s += *t.DebitModelName
-	}
-
-	return s
-}

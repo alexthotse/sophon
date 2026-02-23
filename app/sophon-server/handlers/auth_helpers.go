@@ -94,11 +94,6 @@ func ClearAuthCookieIfBrowser(w http.ResponseWriter, r *http.Request) error {
 		return fmt.Errorf("error retrieving auth cookie: %v", err)
 	}
 
-	var domain string
-	if os.Getenv("GOENV") == "production" {
-		domain = os.Getenv("APP_SUBDOMAIN") + ".sophon.ai"
-	}
-
 	// Clear the authToken cookie
 	http.SetCookie(w, &http.Cookie{
 		Name:     "authToken",
@@ -108,7 +103,6 @@ func ClearAuthCookieIfBrowser(w http.ResponseWriter, r *http.Request) error {
 		Secure:   os.Getenv("GOENV") != "development",
 		HttpOnly: true,
 		SameSite: http.SameSiteLaxMode,
-		Domain:   domain,
 	})
 
 	log.Println("cleared auth cookie")
@@ -141,10 +135,6 @@ func ClearAccountFromCookies(w http.ResponseWriter, r *http.Request, userId stri
 	encodedAccounts := base64.URLEncoding.EncodeToString(updatedAccountsBytes)
 
 	// Set the updated accounts cookie
-	var domain string
-	if os.Getenv("GOENV") == "production" {
-		domain = os.Getenv("APP_SUBDOMAIN") + ".sophon.ai"
-	}
 	http.SetCookie(w, &http.Cookie{
 		Name:     "accounts",
 		Path:     "/",
@@ -152,7 +142,6 @@ func ClearAccountFromCookies(w http.ResponseWriter, r *http.Request, userId stri
 		Secure:   os.Getenv("GOENV") != "development",
 		HttpOnly: true,
 		SameSite: http.SameSiteLaxMode,
-		Domain:   domain,
 	})
 
 	return nil
@@ -197,11 +186,6 @@ func SetAuthCookieIfBrowser(w http.ResponseWriter, r *http.Request, user *db.Use
 	// base64 encode
 	token = base64.URLEncoding.EncodeToString(bytes)
 
-	var domain string
-	if os.Getenv("GOENV") == "production" {
-		domain = os.Getenv("APP_SUBDOMAIN") + ".sophon.ai"
-	}
-
 	cookie := &http.Cookie{
 		Name:     "authToken",
 		Path:     "/",
@@ -209,7 +193,6 @@ func SetAuthCookieIfBrowser(w http.ResponseWriter, r *http.Request, user *db.Use
 		Secure:   os.Getenv("GOENV") != "development",
 		HttpOnly: true,
 		SameSite: http.SameSiteLaxMode,
-		Domain:   domain,
 		Expires:  time.Now().Add(time.Hour * 24 * 90),
 	}
 
@@ -260,7 +243,6 @@ func SetAuthCookieIfBrowser(w http.ResponseWriter, r *http.Request, user *db.Use
 		Secure:   os.Getenv("GOENV") != "development",
 		HttpOnly: true,
 		SameSite: http.SameSiteLaxMode,
-		Domain:   domain,
 		Expires:  time.Now().Add(time.Hour * 24 * 90),
 	})
 
@@ -297,7 +279,7 @@ func ValidateAndSignIn(w http.ResponseWriter, r *http.Request, req shared.SignIn
 	var signInCodeOrgId string
 	var err error
 
-	isLocalMode := (os.Getenv("GOENV") == "development" && os.Getenv("LOCAL_MODE") == "1")
+	isLocalMode := true // Sophon is local-first
 
 	if req.IsSignInCode {
 		res, err := db.ValidateSignInCode(req.Pin)

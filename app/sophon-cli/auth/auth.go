@@ -102,7 +102,7 @@ func RefreshInvalidToken() error {
 	} else {
 		host := Current.Host
 		if host == "" {
-			host = "Sophon Cloud"
+			host = "Sophon"
 		}
 
 		term.OutputErrorAndExit("Account %s not found on %s", Current.Email, host)

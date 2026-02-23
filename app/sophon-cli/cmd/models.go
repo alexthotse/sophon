@@ -305,7 +305,7 @@ func listAvailableModels(cmd *cobra.Command, args []string) {
 	auth.MustResolveAuthWithOrg()
 
 	if customModelsOnly && auth.Current.IntegratedModelsMode {
-		term.OutputErrorAndExit("Custom models are not supported in Integrated Models mode on Sophon Cloud")
+		term.OutputErrorAndExit("Custom models are not supported in Integrated Models mode on Sophon")
 		return
 	}
 

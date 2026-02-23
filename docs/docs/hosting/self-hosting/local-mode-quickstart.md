@@ -14,7 +14,7 @@ The quickstart requires git, docker, and docker-compose. It's designed for local
 1. Run the server in local mode: 
 
 ```bash
-git clone https://github.com/plandex-ai/sophon.git
+git clone https://github.com/sophon.ai/sophon.git
 cd sophon/app
 ./start_local.sh
 ```
@@ -31,7 +31,7 @@ curl -sL https://sophon.ai/install.sh | bash
 sophon sign-in
 ```
 
-4. When prompted 'Use Sophon Cloud or another host?', select 'Local mode host'. Confirm the default host, which is `http://localhost:8099`.
+4. When prompted 'Use Sophon or another host?', select 'Local mode host'. Confirm the default host, which is `http://localhost:8099`.
 
 5. Decide on the model provider(s) you want to use. The quickest option is to use OpenRouter.ai, but you can also use [many other providers](https://docs.sophon.ai/models/model-providers).
 

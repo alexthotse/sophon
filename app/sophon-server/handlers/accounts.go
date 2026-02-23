@@ -20,13 +20,7 @@ import (
 func CreateAccountHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Received request for CreateAccountHandler")
 
-	if os.Getenv("IS_CLOUD") != "" {
-		log.Println("Creating accounts is not supported in cloud mode")
-		http.Error(w, "Creating accounts is not supported in cloud mode", http.StatusNotImplemented)
-		return
-	}
-
-	isLocalMode := (os.Getenv("GOENV") == "development" && os.Getenv("LOCAL_MODE") == "1")
+	isLocalMode := true // Sophon is local-first
 
 	// read the request body
 	body, err := io.ReadAll(r.Body)

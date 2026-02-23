@@ -19,7 +19,7 @@ For example, OpenAI o3-mini has a MaxTokens of 200k and a MaxOutputTokens of 100
 
 For models with a low output limit, we just set ReservedOutputTokens to the MaxOutputTokens.
 
-When checking for sufficient credits on Sophon Cloud, we use MaxOutputTokens-InputTokens, since this is the maximum that could hypothetically be used.
+When checking for sufficient credits on Sophon, we use MaxOutputTokens-InputTokens, since this is the maximum that could hypothetically be used.
 
 'DefaultMaxConvoTokens' is the default maximum number of conversation tokens that are allowed before we start using gradual summarization to shorten the conversation.
 

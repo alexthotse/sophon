@@ -18,15 +18,6 @@ import (
 func ListUsersHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Received a request for ListUsersHandler")
 
-	if os.Getenv("GOENV") == "development" && os.Getenv("LOCAL_MODE") == "1" {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeOther,
-			Status: http.StatusForbidden,
-			Msg:    "Local mode is not supported for user management",
-		})
-		return
-	}
-
 	auth := Authenticate(w, r, true)
 	if auth == nil {
 		return
@@ -39,14 +30,6 @@ func ListUsersHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if org.IsTrial {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeTrialActionNotAllowed,
-			Status: http.StatusForbidden,
-			Msg:    "Trial user can't list users",
-		})
-		return
-	}
 
 	users, err := db.ListUsers(auth.OrgId)
 	if err != nil {
@@ -93,15 +76,6 @@ func ListUsersHandler(w http.ResponseWriter, r *http.Request) {
 func DeleteOrgUserHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Received a request for DeleteOrgUserHandler")
 
-	if os.Getenv("GOENV") == "development" && os.Getenv("LOCAL_MODE") == "1" {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeOther,
-			Status: http.StatusForbidden,
-			Msg:    "Local mode is not supported for user management",
-		})
-		return
-	}
-
 	auth := Authenticate(w, r, true)
 	if auth == nil {
 		return
@@ -114,14 +88,6 @@ func DeleteOrgUserHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if org.IsTrial {
-		writeApiError(w, shared.ApiError{
-			Type:   shared.ApiErrorTypeTrialActionNotAllowed,
-			Status: http.StatusForbidden,
-			Msg:    "Trial user can't delete users",
-		})
-		return
-	}
 
 	vars := mux.Vars(r)
 	userId := vars["userId"]
