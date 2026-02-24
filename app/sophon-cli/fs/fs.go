@@ -33,10 +33,10 @@ func init() {
 	var oldHomeSophonDir string
 	if os.Getenv("PLANDEX_ENV") == "development" {
 		HomeSophonDir = filepath.Join(home, ".sophon-home-dev-v2")
-		oldHomeSophonDir = filepath.Join(home, ".plandex-home-dev-v2")
+		oldHomeSophonDir = filepath.Join(home, ".sophon-home-dev-v2")
 	} else {
 		HomeSophonDir = filepath.Join(home, ".sophon-home-v2")
-		oldHomeSophonDir = filepath.Join(home, ".plandex-home-v2")
+		oldHomeSophonDir = filepath.Join(home, ".sophon-home-v2")
 	}
 
 	// Migration logic: if old home dir exists and new one doesn't, rename it.
@@ -132,10 +132,10 @@ func findSophon(baseDir string) string {
 	var oldDir string
 	if os.Getenv("PLANDEX_ENV") == "development" {
 		dir = filepath.Join(baseDir, ".sophon-dev-v2")
-		oldDir = filepath.Join(baseDir, ".plandex-dev-v2")
+		oldDir = filepath.Join(baseDir, ".sophon-dev-v2")
 	} else {
 		dir = filepath.Join(baseDir, ".sophon-v2")
-		oldDir = filepath.Join(baseDir, ".plandex-v2")
+		oldDir = filepath.Join(baseDir, ".sophon-v2")
 	}
 
 	// Migration logic: if old dir exists and new one doesn't, rename it.

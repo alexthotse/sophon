@@ -16,5 +16,5 @@ tasks:
   rebrand:
     desc: Rebrand the project to Sophon
     cmds:
-      - find . -type f -not -path '*/.*' -exec sed -i 's/Plandex/Sophon/g' {} +
-      - find . -type f -not -path '*/.*' -exec sed -i 's/plandex/sophon/g' {} +
+      - find . -type f -not -path '*/.*' -exec sed -i 's/Sophon/Sophon/g' {} +
+      - find . -type f -not -path '*/.*' -exec sed -i 's/sophon/sophon/g' {} +
